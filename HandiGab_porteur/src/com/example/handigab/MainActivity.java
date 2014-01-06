@@ -1,0 +1,49 @@
+package com.example.handigab;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ImageButton;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+
+	public void highlight(View v){
+		ImageButton mastercard = (ImageButton)this.findViewById(R.id.mastercardButton);
+		ImageButton visa = (ImageButton)this.findViewById(R.id.visaButton);
+		ImageButton cb = (ImageButton)this.findViewById(R.id.cbButton);
+		
+		switch (v.getId()){
+		case R.id.mastercardButton:
+			mastercard.setImageAlpha(255);
+			visa.setImageAlpha(50);
+			cb.setImageAlpha(50);
+			break;
+		case R.id.visaButton:
+			mastercard.setImageAlpha(50);
+			visa.setImageAlpha(255);
+			cb.setImageAlpha(50);
+			break;
+		case R.id.cbButton:
+			mastercard.setImageAlpha(50);
+			visa.setImageAlpha(50);
+			cb.setImageAlpha(255);
+			break;
+		}
+
+	}
+}

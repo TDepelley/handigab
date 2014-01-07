@@ -5,7 +5,6 @@ import com.example.handigab_porteur.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -17,7 +16,14 @@ public class WithdrawalActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_withdrawal);
-		
+		String amount="";
+		Intent intent= getIntent();
+		Bundle b = intent.getExtras();
+		if(b!=null) {
+			amount = b.get("amount").toString();
+			TextView tv =(TextView)this.findViewById(R.id.amount);
+			tv.setText(amount+"Û");
+		}
 	}
 
 	@Override
@@ -49,5 +55,9 @@ public class WithdrawalActivity extends Activity {
 		intent.putExtra("amount", amount);
 		intent.putExtra("service", "withdrawal");
 		startActivity(intent);
+	}
+	
+	public void validate(View v) {
+		
 	}
 }

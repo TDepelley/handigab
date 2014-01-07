@@ -26,7 +26,7 @@ public class AuthentificationActivity extends Activity {
 		 Intent intent= getIntent();
 		 Bundle b = intent.getExtras();
 		 if(b!=null) {
-			 amount =(String) b.get("amount");
+			 amount = b.get("amount").toString();
 		 }
 	}	
 
@@ -37,26 +37,37 @@ public class AuthentificationActivity extends Activity {
 		return true;
 	}
 	
+	public void display(View v) {
+		TextView tv = (TextView)this.findViewById(v.getId());
+		String amount = tv.getText().toString();
+		
+		TextView amountTV = (TextView)this.findViewById(R.id.pinCode);
+		String txt = amountTV.getText().toString();
+
+		if (txt.indexOf("Entrer Pin")>=0) txt="";
+		amountTV.setText(txt+amount);
+	}
+	
 	public void launchWait(View v){
 		String cardNumber = settings.getString("cardNumber", "");
-		String lastName = settings.getString("lastName", "");
-		String firstname = settings.getString("firstname", "");
+		//String lastName = settings.getString("lastName", "");
+		//String firstName = settings.getString("firstName", "");
 		String bankName = settings.getString("bankName", "");
-		String date = settings.getString("date", "");
-		int cardType = settings.getInt("cardType", 0);
+		//String date = settings.getString("date", "");
+		//int cardType = settings.getInt("cardType", 0);
 		String flag = settings.getString("flag", "");
 			
-		if (flag.equals("") || cardNumber.equals("") || lastName.equals("") || firstname.equals("") || bankName.equals("") || date.equals("") || cardType==0) return;
+		//if (flag.equals("") || cardNumber.equals("") || lastName.equals("") || firstName.equals("") || bankName.equals("") || cardType==0) return;
 		
-		TextView textViewPin = (TextView)this.findViewById(R.id.pinAmount) ;
+		TextView textViewPin = (TextView)this.findViewById(R.id.pinCode) ;
 		pin = textViewPin.getText().toString();
+		
+		if (pin.length()!=4) return;
 		
 		String data = flag + ";" + cardNumber+ ";" + pin + ";"+ amount;
 
 		//TODO : Commencer la communication en Bluetooth en envoyant data
-		
-		
-		
+
 		Intent intent = new Intent(this, Wait.class);
 		startActivity(intent);		
 	}

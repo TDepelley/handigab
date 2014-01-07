@@ -24,8 +24,7 @@
                 android:id="@+id/amount"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:gravity="right"
-                android:text="@string/amountString" />
+                android:gravity="right" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +55,8 @@
                     android:layout_gravity="right"
                     android:background="@drawable/button_normal_xml"
                     android:text="@string/e20"
-                    style="?android:attr/borderlessButtonStyle" />
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
 
             </LinearLayout>
 
@@ -113,14 +113,14 @@
                     android:layout_weight=".3" />
 
                 <Button
-                    android:id="@+id/pinAmount"
+                    android:id="@+id/pinCode"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".3"
                     android:background="@drawable/button_normal_xml"
                     android:text="@string/saisir_montant"
-                    android:onClick="lauchAmount" />
+                    android:onClick="launchAmount" />
 
             </LinearLayout>
 

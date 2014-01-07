@@ -4,5 +4,12 @@
     <string name="app_name">HandiGab</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Bienvenue sur HandiGab !</string>
+    <string name="withdrawal">Retrait</string>
+    <string name="view_account">Consultez votre solde</string>
+    <string name="bluetooth_activation_warning">Veuillez activer le bluetooth de votre smartphone pour profiter du système déporté HandiGab.</string>
+    <string name="application_download_warning">&quot;(Vous devez aussi avoir téléchargé l'application HandiGab)&quot;</string>
+    <string name="title_activity_running_operation">RunningOperation</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

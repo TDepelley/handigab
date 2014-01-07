@@ -1,28 +1,24 @@
-package com.example.handigab;
+package com.example.handigab_porteur;
+
+import com.example.handigab_porteur.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.View;
-import android.widget.ImageButton;
 
-public class MainActivity extends Activity {
+public class WithdrawalActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_withdrawal);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.withdrawal, menu);
 		return true;
-	}
-
-	public void launchInitialize(View v){
-		
 	}
 
 }

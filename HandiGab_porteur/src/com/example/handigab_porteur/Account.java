@@ -1,4 +1,6 @@
-package com.example.handigab;
+package com.example.handigab_porteur;
+
+import com.example.handigab_porteur.R;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -27,6 +27,7 @@
             android:name="com.example.handigab_gab.RunningOperation"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_running_operation"
+            android:screenOrientation="landscape"
             android:theme="@style/FullscreenTheme" >
         </activity>
     </application>

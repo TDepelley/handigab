@@ -18,7 +18,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Initialize extends Activity {
-	int cardNumber=0;
+	String cardNumber=null;
 	String lastName=null;
 	String firstname=null;
 	String bankName=null;
@@ -112,18 +112,21 @@ public class Initialize extends Activity {
 		TextView textViewCardNumber = (TextView)this.findViewById(R.id.cardNumber) ;
 		TextView textViewDate = (TextView)this.findViewById(R.id.date) ;
 		
-		editor.putString("lastName", (String)textViewLastName.getText());
-		editor.putString("firstName", (String)textViewFirstName.getText());
-		editor.putString("bankName", (String)textViewBankName.getText());
+		editor.putString("lastName", textViewLastName.getText().toString());
+		editor.putString("firstName", textViewFirstName.getText().toString());	
+		editor.putString("bankName", textViewBankName.getText().toString());
 		
-		test = verifyCardNumber((String)textViewCardNumber.getText());
-		if (test) editor.putInt("cardNumber", Integer.parseInt((String)textViewCardNumber.getText()));
+		String tmp = textViewCardNumber.getText().toString();
+		test = verifyCardNumber(tmp);
+		if (test) editor.putString("cardNumber",tmp);
 		else return;
 		
-		test = verifyDate((String)textViewDate.getText());
-		if (test)editor.putInt("date", Integer.parseInt((String)textViewDate.getText()));
+		tmp = textViewDate.getText().toString();
+		test = verifyDate(tmp);
+		if (test)editor.putInt("date", Integer.parseInt(tmp));
 		else return;
 		
+		if (cardType==0) return;
 		editor.putInt("cardType", cardType);
 		
 		editor.commit();

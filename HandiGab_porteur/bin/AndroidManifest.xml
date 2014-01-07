@@ -34,6 +34,22 @@
             android:name="com.example.handigab.WithdrawalActivity"
             android:label="@string/title_activity_withdrawal" >
         </activity>
+        <activity
+            android:name="com.example.handigab.AuthentificationActivity"
+            android:label="@string/title_activity_authentification" >
+        </activity>
+        <activity
+            android:name="com.example.handigab.Wait"
+            android:label="@string/title_activity_wait" >
+        </activity>
+        <activity
+            android:name="com.example.handigab.Money"
+            android:label="@string/title_activity_money" >
+        </activity>
+        <activity
+            android:name="com.example.handigab.Account"
+            android:label="@string/title_activity_account" >
+        </activity>
     </application>
 
 </manifest>

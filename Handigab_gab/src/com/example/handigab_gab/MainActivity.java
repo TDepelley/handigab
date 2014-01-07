@@ -29,12 +29,14 @@ public class MainActivity extends Activity {
     
     @Override
     public void onStart(){
+    	super.onStart();
     	//Bluetooth detection here
     	super.onStart();
     }
     
     @Override
     public void onResume () {
+    	super.onResume();
     	// Start 
     	super.onResume();
     	

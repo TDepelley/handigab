@@ -18,5 +18,6 @@
     <string name="withdrawalString">Retrait</string>
     <string name="accountString">Relevé</string>
     <string name="title_activity_withdrawal">WithdrawalActivity</string>
+    <string name="withdrawalTitleString">Saisir montant</string>
 
 </resources>

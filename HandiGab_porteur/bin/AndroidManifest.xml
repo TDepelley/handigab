@@ -34,6 +34,10 @@
             android:name="com.example.handigab.WithdrawalActivity"
             android:label="@string/title_activity_withdrawal" >
         </activity>
+        <activity
+            android:name="com.example.handigab.AuthentificationActivity"
+            android:label="@string/title_activity_authentification" >
+        </activity>
     </application>
 
 </manifest>

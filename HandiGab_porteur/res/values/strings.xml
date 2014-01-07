@@ -18,6 +18,8 @@
     <string name="withdrawalString">Retrait</string>
     <string name="accountString">Relevé</string>
     <string name="title_activity_withdrawal">WithdrawalActivity</string>
-    <string name="withdrawalTitleString">Saisir montant</string>
+    <string name="amoutString">Cliquer ici ou sélectionner le montant</string>
+    <string name="title_activity_authentification">AuthentificationActivity</string>
+    <string name="pinString">Saisir PIN</string>
 
 </resources>

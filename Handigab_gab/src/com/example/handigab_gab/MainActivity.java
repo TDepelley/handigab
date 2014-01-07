@@ -1,8 +1,14 @@
 package com.example.handigab_gab;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -24,12 +30,34 @@ public class MainActivity extends Activity {
     @Override
     public void onStart(){
     	//Bluetooth detection here
+    	super.onStart();
     }
     
     @Override
     public void onResume () {
     	// Start 
+    	super.onResume();
+    	
+    	Button bouton = (Button)findViewById(R.id.withdrawalButton);
+    	bouton.setOnClickListener(new OnClickListener() {
+			
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+		    	Intent intent = new Intent(MainActivity.this, RunningOperation.class);
+		    	startActivity(intent);
+			}
+		});
+    	
+    	
+    	Button bouton2 = (Button)findViewById(R.id.accountViewButton);
+    	bouton2.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+		    	Intent intent = new Intent(MainActivity.this, RunningOperation.class);
+		    	startActivity(intent);
+			}
+		});
     }
-    
-    
 }

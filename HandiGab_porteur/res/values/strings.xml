@@ -18,12 +18,13 @@
     <string name="withdrawalString">Retrait</string>
     <string name="accountString">Relevé</string>
     <string name="title_activity_withdrawal">WithdrawalActivity</string>
-    <string name="amoutString">Cliquer ici ou sélectionner le montant</string>
+    <string name="amoutString">Montant saisi</string>
     <string name="title_activity_authentification">AuthentificationActivity</string>
     <string name="pinString">Saisir PIN</string>
     <string name="title_activity_wait">Wait</string>
     <string name="waitString">En attente ...</string>
     <string name="title_activity_money">Money</string>
     <string name="title_activity_account">Account</string>
+    <string name="title_activity_amount">AmountActivity</string>
 
 </resources>

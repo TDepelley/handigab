@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AuthentificationActivity" >
+    tools:context=".AmountActivity" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -19,9 +19,9 @@
             android:id="@+id/amout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
             android:gravity="right"
-            android:text="@string/pinString" />
+            android:inputType="textMultiLine"
+            android:text="@string/amoutString" />
 
         <GridLayout
             android:layout_width="match_parent"

@@ -21,4 +21,15 @@ public class MainActivity extends Activity {
         return true;
     }
     
+    @Override
+    public void onStart(){
+    	//Bluetooth detection here
+    }
+    
+    @Override
+    public void onResume () {
+    	// Start 
+    }
+    
+    
 }

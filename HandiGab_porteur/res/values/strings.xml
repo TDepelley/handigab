@@ -11,5 +11,12 @@
     <string name="dateString">Date de validité (mmaa)</string>
     <string name="bankNameString">Nom de la banque</string>
     <string name="initializeTitleString">Paramètre de la carte</string>
+    <string name="accueilString">Accueil</string>
+    <string name="cardString">Card</string>
+    <string name="configureString">Configuration</string>
+    <string name="title_activity_service">ServiceActivity</string>
+    <string name="withdrawalString">Retrait</string>
+    <string name="accountString">Relevé</string>
+    <string name="title_activity_withdrawal">WithdrawalActivity</string>
 
 </resources>

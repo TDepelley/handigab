@@ -6,17 +6,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".ServiceActivity" >
 
     <TextView
-        android:id="@+id/accueil"
+        android:id="@+id/cardTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="114dp"
-        android:layout_marginTop="73dp"
-        android:text="@string/accueilString" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:text="@string/cardNumberString" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,16 +25,16 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/card"
-            android:layout_width="match_parent"
+            android:id="@+id/withdrawal"
+            android:layout_width="136dp"
             android:layout_height="wrap_content"
-            android:text="@string/cardString" />
+            android:text="@string/withdrawalString" />
 
         <Button
-            android:id="@+id/configure"
-            android:layout_width="wrap_content"
+            android:id="@+id/account"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/configureString" />
+            android:text="@string/accountString" />
 
     </LinearLayout>
 

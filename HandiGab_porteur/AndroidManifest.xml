@@ -26,6 +26,14 @@
             android:name="com.example.handigab.Initialize"
             android:label="@string/title_activity_initialize" >
         </activity>
+        <activity
+            android:name="com.example.handigab.ServiceActivity"
+            android:label="@string/title_activity_service" >
+        </activity>
+        <activity
+            android:name="com.example.handigab.WithdrawalActivity"
+            android:label="@string/title_activity_withdrawal" >
+        </activity>
     </application>
 
 </manifest>

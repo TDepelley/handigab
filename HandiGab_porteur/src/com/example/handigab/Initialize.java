@@ -31,12 +31,20 @@ public class Initialize extends Activity {
 		switch (v.getId()){
 		case R.id.mastercardButton:
 			mastercard.setImageAlpha(255);
-			visa.setImageAlpha(175);
-			cb.setImageAlpha(175);
+			visa.setImageAlpha(50);
+			cb.setImageAlpha(50);
+			break;
+		case R.id.visaButton:
+			mastercard.setImageAlpha(50);
+			visa.setImageAlpha(255);
+			cb.setImageAlpha(50);
+			break;
+		case R.id.cbButton:
+			mastercard.setImageAlpha(50);
+			visa.setImageAlpha(50);
+			cb.setImageAlpha(255);
 			break;
 		}
 
-		
 	}
-	
 }

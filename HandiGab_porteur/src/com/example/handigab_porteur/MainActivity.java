@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 	public static final String PREFS_NAME = "cardFile";
@@ -20,6 +19,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		
 		
 		int cardType = settings.getInt("cardType", 0);
 		if (cardType==0){

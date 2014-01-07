@@ -12,13 +12,14 @@ import android.widget.TextView;
 
 public class ServiceActivity extends Activity {
 	public static final String PREFS_NAME = "cardFile";
+	SharedPreferences settings;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_service);
-		//TODO: rŽecrire la string cardNumberString -> n¡ "cardNumberString"
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		
+		settings = getSharedPreferences(PREFS_NAME, 0);
 		String nbCard = settings.getString("cardNumber", "");
 		if (!nbCard.equals("")){
 			TextView textView = (TextView)this.findViewById(R.id.cardTitle);
@@ -34,11 +35,19 @@ public class ServiceActivity extends Activity {
     }
 	
 	public void launchWithdrawal(View v){
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("flag", "1");
+		editor.commit();
+		
 		Intent intent = new Intent(this, WithdrawalActivity.class);
 		startActivity(intent);
 	}
 	
 	public void launchAuthentification(View v){
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("flag", "0");
+		editor.commit();
+		
 		Intent intent = new Intent(this, AuthentificationActivity.class);
 		startActivity(intent);
 	}

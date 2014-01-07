@@ -29,14 +29,16 @@
             android:layout_width="136dp"
             android:layout_height="wrap_content"
             android:onClick = "launchWithdrawal"
-            android:text="@string/withdrawalString" />
+            android:text="@string/withdrawalString"
+            android:background="@drawable/button_normal_xml" />
 
         <Button
             android:id="@+id/account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick = "launchAuthentification"
-            android:text="@string/accountString" />
+            android:text="@string/accountString"
+            android:background="@drawable/button_normal_xml" />
 
     </LinearLayout>
 

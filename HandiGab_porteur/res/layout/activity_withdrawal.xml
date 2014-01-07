@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/linearLayout1"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="65dp"
             android:orientation="vertical" >
 
@@ -25,65 +25,113 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="right"
-                android:text="@string/amoutString" />
+                android:text="@string/amountString" />
 
-            <GridLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:columnCount="1" >
+                android:padding="5dp" >
 
                 <Button
                     android:id="@+id/quitter"
-                    android:layout_width="98dp"
-                    android:layout_height="wrap_content"
+					android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+                    android:layout_weight=".3"
                     android:layout_gravity="left"
-                    android:text="10€" />
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e10"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="100dp"
-                    android:layout_gravity="left"
-                    android:text="20€" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="right"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e20"
+                    style="?android:attr/borderlessButtonStyle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="100dp"
-                    android:layout_column="0"
-                    android:layout_gravity="left|top"
-                    android:layout_row="2"
-                    android:text="50€" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e50"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
 
                 <Button
                     android:id="@+id/button4"
-                    android:layout_width="100dp"
-                    android:layout_column="0"
-                    android:layout_gravity="right|top"
-                    android:layout_row="0"
-                    android:text="100€" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e100"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
 
                 <Button
                     android:id="@+id/button5"
-                    android:layout_width="100dp"
-                    android:layout_column="0"
-                    android:layout_gravity="right|top"
-                    android:layout_row="1"
-                    android:text="200€" />
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e200"
+					style="?android:attr/borderlessButtonStyle"
+					android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
 
                 <Button
                     android:id="@+id/pinAmount"
-                    android:layout_width="100dp"
-                    android:layout_column="0"
-                    android:layout_gravity="right|top"
-                    android:layout_row="2"
-                    android:text="Saisir montant" />
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/saisir_montant"
+                    android:onClick="lauchAmount" />
 
-            </GridLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Valider" />
+                android:padding="5dp"
+                android:text="@string/valider"
+                android:background="@drawable/button_validate_xml"
+                android:onClick="launchAuthentification" />
         </LinearLayout>
     </ScrollView>
 

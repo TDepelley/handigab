@@ -26,7 +26,8 @@
             android:id="@+id/quitter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quitter" />
+            android:text="Quitter"
+            android:background="@drawable/button_normal_xml" />
 
     </LinearLayout>
 

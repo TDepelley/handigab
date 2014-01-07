@@ -12,6 +12,9 @@ public class Wait extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_wait);
+		
+		//TODO : Recevoir les données
+		String dataGab;
 	}
 
 	@Override

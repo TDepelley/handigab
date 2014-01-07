@@ -87,7 +87,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="validate"
-                android:text="Valider" />
+                android:text="Valider"
+                android:background="@drawable/button_validate_xml" />
 
         </LinearLayout>
 

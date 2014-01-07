@@ -11,5 +11,8 @@
     <string name="title_activity_running_operation">RunningOperation</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="logo_ensi">Logo Ensicaen</string>
+    <string name="logo_ucbn">Logo UCBN</string>
+    <string name="logo_diebold">Logo Diebold</string>
 
 </resources>

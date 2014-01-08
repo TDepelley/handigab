@@ -169,7 +169,7 @@ public class MainActivity extends Activity {
 				switch (msg.arg1) {
 				case BluetoothServerService.STATE_CONNECTED:
 					Log.i(TAG, "State connected");
-					// TODO changement etat vers connecté
+					// TODO changement etat vers connect
 					startActivityForResult(new Intent(MainActivity.this,
 							RunningOperation.class), REQUEST_FINISH);
 					break;
@@ -180,7 +180,7 @@ public class MainActivity extends Activity {
 				case BluetoothServerService.STATE_LISTEN:
 				case BluetoothServerService.STATE_NONE:
 					Log.i(TAG, "State unconnect");
-					// TODO changement etat non connecté
+					// TODO changement etat non connect
 					break;
 				}
 				break;

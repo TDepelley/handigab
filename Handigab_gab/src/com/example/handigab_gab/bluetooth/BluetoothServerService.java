@@ -15,15 +15,16 @@
  */
 package com.example.handigab_gab.bluetooth;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
+
 import javax.crypto.CipherInputStream;
 import javax.crypto.CipherOutputStream;
 
-import com.example.handigab_gab.MainActivity;
-import com.example.handigab_gab.security.CipherStreamSystem;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
@@ -33,6 +34,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
+import com.example.handigab_gab.security.CipherStreamSystem;
 
 
 public class BluetoothServerService {
@@ -200,13 +203,17 @@ public class BluetoothServerService {
     public synchronized void stop() {
         if (D) Log.d(TAG, "stop");
 
+        setState(STATE_SHUTDOWN);
+        
         if (mConnectThread != null) {
             mConnectThread.cancel();
+            mConnectThread.interrupt();
             mConnectThread = null;
         }
 
         if (mConnectedThread != null) {
             mConnectedThread.cancel();
+            mConnectedThread.interrupt();
             mConnectedThread = null;
         }
 
@@ -216,7 +223,6 @@ public class BluetoothServerService {
             mInsecureAcceptThread = null;
         }
         
-        setState(STATE_SHUTDOWN);
     }
 
     /**
@@ -447,15 +453,16 @@ public class BluetoothServerService {
                 // opening stream output
                	Log.d(TAG, "Opening cipher output stream");
                 CipherOutputStream cipherOut = cipherSystem.getOutputSteam(socket.getOutputStream());
-                Log.d(TAG, "Opening object output stream");
-
+                DataOutputStream objOut = new DataOutputStream(cipherOut);
 
                 // opening stream input
                 Log.d(TAG, "Opening cipher input stream");
                 CipherInputStream cipherIn = cipherSystem.getInputStream(socket.getInputStream());
-                Log.d(TAG, "Opening object input stream");
-
+                DataInputStream objIn = new DataInputStream(cipherIn);
                 Log.i(TAG, "Streams I/O opened.");
+                
+                //tmpIn = objIn;
+                //tmpOut = objOut;
 
             } 
             catch (IOException e) {
@@ -482,10 +489,17 @@ public class BluetoothServerService {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
 
+                    Log.d(TAG, "Message recu : "+(new String(buffer)));
+                    
                     // Send the obtained bytes to the UI Activity
                     mHandler.obtainMessage(BluetoothConstants.MESSAGE_READ, bytes, -1, buffer)
                             .sendToTarget();
                 } catch (IOException e) {
+                	try {
+                		mmSocket.close();
+                	}
+                	catch(Exception e2) {}
+                	
                     Log.e(TAG, "disconnected", e);
                     connectionLost();
                     // Start the service over to restart listening mode

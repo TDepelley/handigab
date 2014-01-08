@@ -227,6 +227,7 @@ public class CipherStreamSystem {
 				"9ce2e29b2be0ebfd7b3c58cfb0ee4e9004e65367c069f358effaf2a8e334891d20ff158111f54b50244d682b720f964c4d6234079d480fcc2ce66e0fa3edeb642b0700cd62c4c02a483c92d2361e41a23706332bd3a8aaed07fe53bba376cefbce12fa46265ad5ea5210a3d96f5260f7b6f29588f61a4798e40bdc75bbb2b457",
 				16);
 
+		// android limitation on key size ...
 		DHParameterSpec dhSpec = new DHParameterSpec(p, g, 512);
 
 		// Create a Diffie-Hellman key pair.

@@ -1,4 +1,0 @@
-handigab
-========
-
-Projet intensif

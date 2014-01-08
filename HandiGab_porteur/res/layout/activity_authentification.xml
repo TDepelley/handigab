@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="Entrer Pin" />
+            android:inputType="textPassword"
+            android:text="" />
 
         <LinearLayout
             android:layout_width="match_parent"

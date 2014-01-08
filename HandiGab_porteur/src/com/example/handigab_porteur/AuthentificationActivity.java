@@ -27,7 +27,6 @@ public class AuthentificationActivity extends Activity {
 		}
 		
 		pref_name = b.getString("pref");
-				
 		settings = getSharedPreferences(pref_name, 0);
 
 	}	
@@ -46,7 +45,7 @@ public class AuthentificationActivity extends Activity {
 		TextView amountTV = (TextView)this.findViewById(R.id.pinCode);
 		String txt = amountTV.getText().toString();
 
-		if (txt.indexOf("Entrer Pin")>=0) txt="";
+		if (txt.indexOf("a")>=0) txt="";
 		amountTV.setText(txt+amount);
 	}
 
@@ -95,7 +94,7 @@ public class AuthentificationActivity extends Activity {
 
 		//if (flag.equals("") || cardNumber.equals("") || lastName.equals("") || firstName.equals("") || bankName.equals("") || cardType==0) return;
 
-		String data = flag + ";" + cardNumber+ ";" + pinString + ";"+ amount;
+		String data = flag + ";"+ bankName + ";" + cardNumber+ ";" + pinString + ";"+ amount;
 
 		//TODO : Commencer la communication en Bluetooth en envoyant data
 

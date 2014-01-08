@@ -70,7 +70,8 @@ public class CardsActivity extends Activity {
 	public void cardInfo(String info,ArrayList<String> card){
 		card = new ArrayList<String>(); 	
 		try{
-			InputStream ips=new FileInputStream("src/com/example/handigab_porteur/"+info); 
+			//InputStream ips = getAssets().open(info);
+			InputStream ips=new FileInputStream(""+info); 
 			InputStreamReader ipsr=new InputStreamReader(ips);
 			BufferedReader br=new BufferedReader(ipsr);
 			String ligne;

@@ -26,6 +26,9 @@ public class WithdrawalActivity extends Activity {
 			amount = b.get("amount").toString();
 			TextView tv =(TextView)this.findViewById(R.id.amount);
 			tv.setText(amount+"Û");
+		}else{
+			TextView tv =(TextView)this.findViewById(R.id.amount);
+			tv.setText("Saisir montant");
 		}
 	}
 
@@ -54,6 +57,8 @@ public class WithdrawalActivity extends Activity {
 	public void launchAuthentification(View v) {
 		TextView tv = (TextView)this.findViewById(R.id.amount);
 		String amount = tv.getText().toString();
+		
+		if (amount.indexOf("S")>=0) return;
 		
 		Intent intent = new Intent(this, AuthentificationActivity.class);
 		intent.putExtra("amount", amount);

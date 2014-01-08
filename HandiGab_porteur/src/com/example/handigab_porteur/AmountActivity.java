@@ -18,6 +18,9 @@ public class AmountActivity extends Activity {
 		Intent intent= getIntent();
 		Bundle b = intent.getExtras();
 		
+		TextView tv = (TextView)this.findViewById(R.id.pinAmount);
+		tv.setText("Saisir Montant");
+		
 		if(b.get("pref")!=null) {
 			pref_name = b.get("pref").toString();
 		}
@@ -50,12 +53,15 @@ public class AmountActivity extends Activity {
 			CharSequence corrected = pinSeq.subSequence(0, pinSeq.length()-1);
 			tv.setText(corrected);
 		}
+
+		String amount = tv.getText().toString();
+		if (amount.indexOf("M")>=0) tv.setText("");;
 	}
 	
 	public void stop(View v) {
-		Intent intent = new Intent(this, WithdrawalActivity.class);
-		intent.putExtra("pref", pref_name);
-		startActivity(intent);
+	//	Intent intent = new Intent(this, WithdrawalActivity.class);
+	//	intent.putExtra("pref", pref_name);
+	//	startActivity(intent);
 		finish();
 	}
 	

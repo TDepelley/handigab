@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class WithdrawalActivity extends Activity {
-	public static final String PREFS_NAME = "cardFile";
+	String pref_name=null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,10 @@ public class WithdrawalActivity extends Activity {
 		String amount="";
 		Intent intent= getIntent();
 		Bundle b = intent.getExtras();
-		if(b!=null) {
+		
+		pref_name = b.getString("pref");
+		
+		if((b.get("amount"))!=null) {
 			amount = b.get("amount").toString();
 			TextView tv =(TextView)this.findViewById(R.id.amount);
 			tv.setText(amount+"Û");
@@ -44,20 +47,17 @@ public class WithdrawalActivity extends Activity {
 	
 	public void launchAmount(View v) {
 		Intent intent = new Intent(this, AmountActivity.class);
+		intent.putExtra("pref", pref_name);
 		startActivity(intent);
 	}
 
 	public void launchAuthentification(View v) {
 		TextView tv = (TextView)this.findViewById(R.id.amount);
 		String amount = tv.getText().toString();
-				
+		
 		Intent intent = new Intent(this, AuthentificationActivity.class);
 		intent.putExtra("amount", amount);
-		intent.putExtra("service", "withdrawal");
+		intent.putExtra("pref", pref_name);
 		startActivity(intent);
-	}
-	
-	public void validate(View v) {
-		
 	}
 }

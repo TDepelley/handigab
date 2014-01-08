@@ -10,7 +10,7 @@
     <string name="dateString">Date de validité (mmaa)</string>
     <string name="bankNameString">Nom de la banque</string>
     <string name="initializeTitleString">Paramètres de la carte</string>
-    <string name="accueilString">Bienvenue sur HandiGab !</string>
+    <string name="accueilString">Bienvenue sur HandiGab!</string>
     <string name="cardString">Carte</string>
     <string name="configureString">Configuration</string>
     <string name="title_activity_service">ServiceActivity</string>
@@ -34,5 +34,6 @@
     <string name="valider">Valider</string>
     <string name="title_activity_cards">CardsActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_information">InformationActivity</string>
 
 </resources>

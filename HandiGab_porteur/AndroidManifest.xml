@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="18" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -66,6 +66,10 @@
         <activity
             android:name="com.example.handigab_porteur.CardsActivity"
             android:label="@string/title_activity_cards" >
+        </activity>
+        <activity
+            android:name="com.example.handigab_porteur.InformationActivity"
+            android:label="@string/title_activity_information" >
         </activity>
     </application>
 

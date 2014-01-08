@@ -212,6 +212,7 @@
                 android:layout_weight=".33" 
                 android:background="@drawable/button_correct_xml"            
                 android:text="Corriger"
+                android:onClick="correct"
                 style="?android:attr/borderlessButtonStyle" />
                 
             <Space
@@ -241,6 +242,7 @@
                 android:layout_weight=".33"
                 android:background="@drawable/button_cancel_xml"
                 android:text="Abandon"
+                android:onClick="stop"
                 style="?android:attr/borderlessButtonStyle" />
 
         </LinearLayout>

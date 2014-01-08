@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:orientation="vertical" >
-
+        
         <Button
             android:id="@+id/withdrawal"
             android:layout_width="136dp"
@@ -40,6 +40,14 @@
             android:text="@string/accountString"
             android:background="@drawable/button_normal_xml" />
 
+        <Button
+            android:id="@+id/information"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:onClick = "launchInformation"
+            android:text="Informations"
+            android:background="@drawable/button_normal_xml" />
+        
     </LinearLayout>
 
 </RelativeLayout>

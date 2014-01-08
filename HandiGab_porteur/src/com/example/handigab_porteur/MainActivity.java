@@ -31,7 +31,8 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		setContentView(R.layout.activity_main);
+		
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -43,8 +44,9 @@ public class MainActivity extends Activity {
 			return;
 		}
 
-		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-		mBluetoothService = app.getBluetoothService();
+		//TODO: bug here
+		//HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+		//mBluetoothService = app.getBluetoothService();
 
 		new Handler().postDelayed(new Runnable() {
 			public void run() {
@@ -55,86 +57,86 @@ public class MainActivity extends Activity {
 		},TIMEOUT);
 	}
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		Log.d(TAG, "onStart");
 
-		// If BT is not on, request that it be enabled.
-		// setupChat() will then be called during onActivityResult
-		if (!mBluetoothAdapter.isEnabled()) {
-			Intent enableIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
-			// Otherwise, setup the chat session
-		} 
-		else {
-			/*if (mBluetoothService == null) {
-				setup();
-			}*/
-
-			HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-			app.searchServer();
-		}
-	}
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		Log.d(TAG, "onResume");
-		//HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-		//app.getBluetoothService().updateHandler(mHandler);
-	}
-
-	@Override
-	public void onDestroy() {
-		super.onDestroy();
-
-		// Stop the Bluetooth chat services
-		if (mBluetoothService != null)
-			mBluetoothService.stop();
-
-		// Make sure we're not doing discovery anymore
-		if (mBluetoothAdapter != null) {
-			mBluetoothAdapter.cancelDiscovery();
-		}
-
-		// Unregister broadcast listeners
-		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-		//app.unregisterReceivers();
-	}
-
-	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-
-		switch(item.getItemId()) {
-		case R.id.action_search_gab:
-			app.setNbEssai(0); // reinit
-			app.searchServer();
-			break;
-		case R.id.action_test_gab:
-			app.sendMessage("TEST");
-			break;
-		}
-
-		return super.onMenuItemSelected(featureId, item);
-	}
-
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		switch (requestCode) {
-		case REQUEST_ENABLE_BT:
-			// When the request to enable Bluetooth returns
-			if (resultCode == Activity.RESULT_OK) {
-				HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
-				app.searchServer();
-			} else {
-				// User did not enable Bluetooth or an error occurred
-				Log.d(TAG, "BT not enabled");
-				Toast.makeText(this, R.string.bt_not_enabled_leaving,
-						Toast.LENGTH_SHORT).show();
-				finish();
-			}
-		}
-	}
+//	@Override
+//	public void onStart() {
+//		super.onStart();
+//		Log.d(TAG, "onStart");
+//
+//		// If BT is not on, request that it be enabled.
+//		// setupChat() will then be called during onActivityResult
+//		if (!mBluetoothAdapter.isEnabled()) {
+//			Intent enableIntent = new Intent(
+//					BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
+//			// Otherwise, setup the chat session
+//		} 
+//		else {
+//			/*if (mBluetoothService == null) {
+//				setup();
+//			}*/
+//
+//			HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+//			app.searchServer();
+//		}
+//	}
+//	@Override
+//	protected void onResume() {
+//		super.onResume();
+//		Log.d(TAG, "onResume");
+//		//HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+//		//app.getBluetoothService().updateHandler(mHandler);
+//	}
+//
+//	@Override
+//	public void onDestroy() {
+//		super.onDestroy();
+//
+//		// Stop the Bluetooth chat services
+//		if (mBluetoothService != null)
+//			mBluetoothService.stop();
+//
+//		// Make sure we're not doing discovery anymore
+//		if (mBluetoothAdapter != null) {
+//			mBluetoothAdapter.cancelDiscovery();
+//		}
+//
+//		// Unregister broadcast listeners
+//		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+//		//app.unregisterReceivers();
+//	}
+//
+//	@Override
+//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+//		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+//
+//		switch(item.getItemId()) {
+//		case R.id.action_search_gab:
+//			app.setNbEssai(0); // reinit
+//			app.searchServer();
+//			break;
+//		case R.id.action_test_gab:
+//			app.sendMessage("TEST");
+//			break;
+//		}
+//
+//		return super.onMenuItemSelected(featureId, item);
+//	}
+//
+//	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		switch (requestCode) {
+//		case REQUEST_ENABLE_BT:
+//			// When the request to enable Bluetooth returns
+//			if (resultCode == Activity.RESULT_OK) {
+//				HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+//				app.searchServer();
+//			} else {
+//				// User did not enable Bluetooth or an error occurred
+//				Log.d(TAG, "BT not enabled");
+//				Toast.makeText(this, R.string.bt_not_enabled_leaving,
+//						Toast.LENGTH_SHORT).show();
+//				finish();
+//			}
+//		}
+//	}
 }

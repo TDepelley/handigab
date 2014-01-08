@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class Initialize extends Activity {
 	String cardNumber=null;
 	String lastName=null;
-	String firstname=null;
+	String firstName=null;
 	String bankName=null;
 	String date=null; //MMAA
 	int cardType=0; //1=Mastercard 2=Visa 3=CB
@@ -119,7 +119,7 @@ public class Initialize extends Activity {
 		
 		tmp = textViewDate.getText().toString();
 		test = verifyDate(tmp);
-		if (test) editor.putInt("date", Integer.parseInt(tmp));
+		if (test) editor.putString("date", tmp);
 		else return;
 		
 		if (cardType==0) return;

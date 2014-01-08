@@ -76,12 +76,11 @@ public class RunningOperation extends Activity {
 			case BluetoothConstants.MESSAGE_WRITE:
 				byte[] writeBuf = (byte[]) msg.obj;
 				String messageEnvoye = new String(writeBuf);
-
 				break;
 			case BluetoothConstants.MESSAGE_READ:
 				byte[] readBuf = (byte[]) msg.obj;
 				String messageRecu = new String(readBuf, 0, msg.arg1);
-
+				receiveMessage(messageRecu);
 				break;
 			case BluetoothConstants.MESSAGE_DEVICE_NAME:
 				// save the connected device's name
@@ -101,10 +100,8 @@ public class RunningOperation extends Activity {
 	};
 
 	/**
-	 * Sends a message.
-	 * 
+	 * Permet d'envoyer un message à l'application porteur
 	 * @param message
-	 *            A string of text to send.
 	 */
 	private void sendMessage(String message) {
 		// Check that we're actually connected before trying anything
@@ -119,6 +116,21 @@ public class RunningOperation extends Activity {
 			// Get the message bytes and tell the BluetoothChatService to write
 			byte[] send = message.getBytes();
 			mBluetoothService.write(send);
+		}
+	}
+	
+	/**
+	 * Permet de recevoir un message de l'application porteur
+	 * @param message
+	 */
+	private void receiveMessage(String message) {
+		Toast.makeText(getApplicationContext(),
+				"Message reçu : "+message,
+				Toast.LENGTH_SHORT).show();
+		
+		// test de connexion
+		if(message.equals("TEST")) {
+			sendMessage("TEST OK");
 		}
 	}
 }

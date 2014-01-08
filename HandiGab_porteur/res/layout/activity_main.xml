@@ -8,39 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/cardString" 
-             android:onClick="launchService"
-             android:background="@drawable/button_normal_xml"/>
-
-        <Button
-            android:id="@+id/configure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/configureString"
-            android:onClick="launchInitialize"
-            android:background="@drawable/button_normal_xml" />
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/accueil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
         android:text="@string/accueilString" />
 
 </RelativeLayout>

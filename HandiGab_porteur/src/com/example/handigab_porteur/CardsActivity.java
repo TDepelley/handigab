@@ -1,5 +1,7 @@
 package com.example.handigab_porteur;
 
+import com.example.handigab_porteur.bluetooth.BluetoothClientService;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -8,14 +10,19 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class CardsActivity extends Activity {
+
 	int nbCard=0;
 	public static final String PREFS_CARD1 = "card1";
 	public static final String PREFS_CARD2 = "card2";
@@ -40,7 +47,9 @@ public class CardsActivity extends Activity {
 		
 		createButton(1,PREFS_CARD1,card1);
 		createButton(2,PREFS_CARD1,card2);
+		
 
+		
 	}
 	
 	public void createButton(int i,String pref, ArrayList<String> card){
@@ -120,4 +129,5 @@ public class CardsActivity extends Activity {
 		return true;
 	}
 
+	
 }

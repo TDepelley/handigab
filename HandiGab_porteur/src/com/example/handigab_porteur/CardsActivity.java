@@ -31,8 +31,8 @@ public class CardsActivity extends Activity {
 		fillPreferences(PREFS_CARD1,card1);
 		fillPreferences(PREFS_CARD2,card2);
 		
-		createButton(PREFS_CARD1);
-		createButton(PREFS_CARD2);
+		createButton(prefNames,card1);
+		createButton(prefNames,card2);
 	}
 	
 	public void fillCards() {
@@ -63,6 +63,9 @@ public class CardsActivity extends Activity {
 		}
 	}
 	
+	public void createButton(ArrayList<String> prefNames, ArrayList<String> card1) {
+		
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

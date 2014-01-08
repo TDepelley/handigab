@@ -6,6 +6,7 @@ import com.example.handigab_porteur.bluetooth.BluetoothClientService;
 import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
+import android.app.Application;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.util.Log;
@@ -45,7 +46,8 @@ public class MainActivity extends Activity {
 		}
 
 		//TODO: bug here
-		//HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+		Application a = getApplication();
+		HandiGabPorteurApplication app = (HandiGabPorteurApplication) a;
 		//mBluetoothService = app.getBluetoothService();
 
 		new Handler().postDelayed(new Runnable() {

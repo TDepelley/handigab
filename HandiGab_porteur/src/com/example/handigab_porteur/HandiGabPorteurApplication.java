@@ -107,7 +107,7 @@ public class HandiGabPorteurApplication extends Application {
 			} else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED
 					.equals(action)) {
 
-				// TODO Wait Ã  ajouter
+				// TODO Wait e  ajouter
 				// doDiscovery();
 
 				Log.d(TAG, "BL ACTION_DISCOVERY_FINISHED");

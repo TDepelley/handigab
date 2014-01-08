@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".WithdrawalActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="right" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <Button
+                    android:id="@+id/quitter"
+					android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="left"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e10"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_gravity="right"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e20"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e50"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e100"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:onClick="display" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/e200"
+					style="?android:attr/borderlessButtonStyle"
+					android:onClick="display" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3" />
+
+                <Button
+                    android:id="@+id/pinCode"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:background="@drawable/button_normal_xml"
+                    android:text="@string/saisir_montant"
+                    android:onClick="launchAmount" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/valider"
+                android:background="@drawable/button_validate_xml"
+                android:onClick="launchAuthentification" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -214,6 +214,7 @@ pip-log.txt
 
 Handigab_gab/bin/
 Handigab_gab/gen/
+Handigab_gab/Logo/
 .metadata/
 HandiGab_porteur/bin/AndroidManifest.xml
 /Servers/
@@ -222,3 +223,6 @@ HandiGab_porteur/.settings/org.eclipse.jdt.core.prefs
 Handigab_gab/bin/AndroidManifest.xml
 
 RemoteSystemsTempFiles/.project
+
+HandiGab_porteur/bin/
+HandiGab_porteur/gen/

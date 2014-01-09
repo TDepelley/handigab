@@ -17,7 +17,6 @@ import android.widget.Space;
 import android.widget.TextView;
 
 public class CardsActivity extends Activity {
-
 	int nbCard=0;
 	public static final String PREFS_CARD1 = "card1";
 	public static final String PREFS_CARD2 = "card2";
@@ -32,11 +31,11 @@ public class CardsActivity extends Activity {
 		nbCard=2;
 		card1 = new ArrayList<String>(); 
 
-		String cardNumber="1234567890123456";
+		String cardNumber="123456789012";
 		String date="0115";
 		String lastName="DUPONT";
 		String firstName="Alice";
-		String bankName="Societe Generale";
+		String bankName="Ensibank";
 		String cardType="Visa";
 
 		cardPreferences(PREFS_CARD1,card1,cardNumber,date,lastName,firstName,bankName,cardType);

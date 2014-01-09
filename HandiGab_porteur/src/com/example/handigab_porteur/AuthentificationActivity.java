@@ -4,6 +4,7 @@ import com.example.handigab_porteur.R;
 import com.example.handigab_porteur.bluetooth.BluetoothClientService;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class AuthentificationActivity extends Activity {
+
+
 //	// Intent request codes
 //	private static final int REQUEST_ENABLE_BT = 1;
 //	private static final String TAG = "MainActivity";
@@ -58,7 +61,6 @@ public class AuthentificationActivity extends Activity {
 //
 //		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
 //		mBluetoothService = app.getBluetoothService();
-
 	}	
 
 	@Override

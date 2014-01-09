@@ -189,7 +189,7 @@ public class HandiGabPorteurApplication extends Application {
 
 	};
 	
-	private void connectDevice(Intent data) {
+	public void connectDevice(Intent data) {
 		// Get the device MAC address
 		String address = data.getExtras().getString(
 				BluetoothConstants.EXTRA_DEVICE_ADDRESS);
@@ -238,19 +238,19 @@ public class HandiGabPorteurApplication extends Application {
 		// Check that there's actually something to send
 		if (message.length() > 0) {
 			// Get the message bytes and tell the BluetoothChatService to write
-			byte[] send = message.getBytes();
+			byte[] send = new byte[message.length()];
+			send = message.getBytes();
+			Log.e("Error",send.toString());
 			mBluetoothService.write(send);
 		}
 	}
 	
 	/**
-	 * Message reçu
+	 * Message recu
 	 * @param message
 	 */
 	public void receiveMessage(String message) {
-		Toast.makeText(getApplicationContext(),
-				"Message reçu : "+message,
-				Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(),	"Message recu : "+message,	Toast.LENGTH_SHORT).show();
 	}
 
 	public void setNbEssai(int nbEssai) {

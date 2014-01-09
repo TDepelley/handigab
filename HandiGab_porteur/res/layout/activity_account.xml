@@ -8,27 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Account" >
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/informationAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="198dp"
-        android:orientation="vertical" >
+        android:layout_marginTop="65dp"
+        android:text="Informations du compte" />
 
-        <TextView
-            android:id="@+id/informationAccount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Informations du compte" />
-
-        <Button
-            android:id="@+id/quitter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Quitter"
-            android:background="@drawable/button_normal_xml" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/quitter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/button_normal_xml"
+        android:onClick="launchCard"
+        android:text="Quitter" />
 
 </RelativeLayout>

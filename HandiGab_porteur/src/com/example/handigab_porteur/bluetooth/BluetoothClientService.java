@@ -340,7 +340,7 @@ public class BluetoothClientService {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
 
-                    Log.d(TAG, "Message recu : "+(new String(buffer)));
+                    Log.d("Error", "Message recu : "+(new String(buffer)));
                     
                     // Send the obtained bytes to the UI Activity
                     mHandler.obtainMessage(BluetoothConstants.MESSAGE_READ, bytes, -1, buffer)

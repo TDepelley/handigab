@@ -64,5 +64,6 @@ public class WithdrawalActivity extends Activity {
 		intent.putExtra("amount", amount);
 		intent.putExtra("pref", pref_name);
 		startActivity(intent);
+		finish();
 	}
 }

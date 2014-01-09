@@ -100,6 +100,10 @@ public class InformationActivity extends Activity {
 				ImageView imw = new ImageView(this);
 				imw.setImageResource(R.drawable.ic_cic);
 				l.addView(imw,lp);
+			}else if (bankName.equalsIgnoreCase("ensibank")) {
+				ImageView imw = new ImageView(this);
+				imw.setImageResource(R.drawable.ic_logoensi);
+				l.addView(imw,lp);
 			}
 		}
 	}

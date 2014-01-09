@@ -63,7 +63,7 @@ public class CardsActivity extends Activity {
 
 	public void createButton(int i,String pref, ArrayList<String> card){
 		Space sp = new Space(this);
-		sp.setPadding(0, 10, 0, 10);
+		sp.setMinimumHeight(50);
 		Button btn = new Button(this);
 		btn.setId(i);
 		btn.setText("N¡ "+card.get(0));

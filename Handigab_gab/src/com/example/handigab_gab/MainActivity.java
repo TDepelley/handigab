@@ -1,6 +1,5 @@
 package com.example.handigab_gab;
 
-
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;

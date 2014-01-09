@@ -28,7 +28,7 @@ public class RunningOperation extends Activity {
 	private static final String TAG = "RunningOperation";
 	private static final boolean D = true;
 	private static String banqueGAB = "Ensibank";
-	//private static String PIN_INVALIDE = "PIN§INVALIDE"
+	//private static String PIN_INVALIDE = "PIN��INVALIDE"
 
 	// Member object for the chat services
 	private BluetoothServerService mBluetoothService = null;
@@ -89,7 +89,7 @@ public class RunningOperation extends Activity {
 				case BluetoothServerService.STATE_CONNECTED:
 					Log.e("rrrrrrrrrrr","STATE_CONNECTED");
 					Log.i(TAG, "State connected");
-					// TODO changement etat vers connecté
+					// TODO changement etat vers connect��
 					break;
 				case BluetoothServerService.STATE_CONNECTING:
 					Log.e("rrrrrrrrrrr","STATE_CONNECTING");
@@ -126,7 +126,7 @@ public class RunningOperation extends Activity {
 					messageReceived(messageRecu);
 				}
 				else {
-					Log.e(TAG, "Message reçu null !!");
+					Log.e(TAG, "Message recu null !!");
 				}
 				
 				break;
@@ -149,7 +149,7 @@ public class RunningOperation extends Activity {
 	};
 
 	/**
-	 * Permet d'envoyer un message à l'application porteur
+	 * Permet d'envoyer un message �� l'application porteur
 	 * @param message
 	 */
 	private void sendMessage(String message) {
@@ -179,7 +179,7 @@ public class RunningOperation extends Activity {
 		String clientBank = "";
 
 //		Toast.makeText(getApplicationContext(),
-//				"TOAST : Message reçu : "+message,
+//				"TOAST : Message re��u : "+message,
 //				Toast.LENGTH_SHORT).show();
 		result = message.split(";");
 		message = "";
@@ -191,11 +191,11 @@ public class RunningOperation extends Activity {
 		} 
 		message = message.substring(0, message.length()-2);
 
-		Log.d("rrrrrrrrrrr","zobé");
+		Log.d("rrrrrrrrrrr","zob��");
 		String returnMessage;
 
 		if (clientBank.compareTo(banqueGAB) != 0 && result[0].compareTo("0") == 0) {
-			Log.d("rrrrrrrrrrr","aobé++");
+			Log.d("rrrrrrrrrrr","aob��++");
 			// Si le client a demande une consultation hors de sa banque
 			returnMessage = "False;Vous ne pouvez consulter votre solde que dans votre banque";
 			sendMessage(returnMessage);
@@ -208,12 +208,12 @@ public class RunningOperation extends Activity {
 				Log.d("rrrrrrrrrrr","length 1"+ response[0]);
 
 				if (response[0].equals("OK")) {
-					returnMessage = "True;Retrait accepté. Veuillez prendre vos billets";
+					returnMessage = "True;Retrait accept��. Veuillez prendre vos billets";
 					sendMessage(returnMessage);
 					return;
 				}
 				if (response[0].equals("PIN-INVALIDE")) {
-					returnMessage = "False;Votre PIN est invalide. Veuillez recommencer l'opération";
+					returnMessage = "False;Votre PIN est invalide. Veuillez recommencer l'op��ration";
 					sendMessage(returnMessage);
 					return;
 				}
@@ -223,7 +223,7 @@ public class RunningOperation extends Activity {
 					return;
 				}
 				if (response[0].equals("SOLDE-INSUFFISANT")) {
-					returnMessage = "False;Retrait refusé. Votre solde est insuffisant.";
+					returnMessage = "False;Retrait refus��. Votre solde est insuffisant.";
 					sendMessage(returnMessage);
 					return;
 				}
@@ -257,7 +257,7 @@ public class RunningOperation extends Activity {
 			String[] response = {""};
 			if (result == null)
 			{
-				Toast.makeText(RunningOperation.this, "Problème de connexion au serveur", Toast.LENGTH_SHORT).show();
+				Toast.makeText(RunningOperation.this, "Probl��me de connexion au serveur", Toast.LENGTH_SHORT).show();
 				return new String[] {"Probleme de connexion avec le serveur"};
 			}
 			else

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The contents of this file will be loaded for each web application -->
+
+<Context path="/HandiGABServer">
+ <!-- Default set of monitored resources -->
+    <!-- <WatchedResource>WEB-INF/web.xml</WatchedResource> -->
+    
+   <Resource name="HandiGABServerDS" 
+           type="javax.sql.DataSource"
+           auth="Container" 
+           maxActive="100" 
+           maxIdle="30" 
+           maxWait="10000"
+           username="root" 
+           password="" 
+           driverClassName="com.mysql.jdbc.Driver" 
+           url="jdbc:mysql://localhost:81/handigab_bd"/>
+           
+           
+      
+</Context>

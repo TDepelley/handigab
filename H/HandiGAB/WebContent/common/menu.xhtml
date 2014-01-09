@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+</h:head>
+<body>
+	<a4j:status onstart="#{rich:component('statPane')}.show()"
+		onstop="#{rich:component('statPane')}.hide()" />
+	<h:form id="FrmHome">
+		<rich:panelMenu mode="ajax" topGroupExpandedRightIcon="chevronUp"
+			topGroupCollapsedRightIcon="chevronDown" groupExpandedLeftIcon="disc"
+			groupCollapsedLeftIcon="disc">
+			
+			<rich:panelMenuGroup label="Administration" rendered="#{menuFB.menuHabilitation00}">
+
+				
+					<rich:panelMenuItem label="Agence" action="#{menuFB.goToAgence}"
+						 rendered="#{menuFB.menuHabilitation02}"/>
+					<rich:panelMenuItem label="Compte" action="#{menuFB.goToCompte}"
+						 rendered="#{menuFB.menuHabilitation03}"/>
+						 
+				
+
+				<rich:panelMenuItem label="Utilisateur" action="#{menuFB.goToUser}"
+					 rendered="#{menuFB.menuHabilitation05}"/>
+							
+				</rich:panelMenuGroup>
+			
+			<rich:panelMenuGroup label=" Client" rendered="#{menuFB.menuHabilitation6}">
+				<rich:panelMenuItem label="Collecte" action="#{menuFB.goToClient}"
+					 rendered="#{menuFB.menuHabilitation7}"/>
+
+				
+
+			</rich:panelMenuGroup>
+			
+			</rich:panelMenu>
+			<rich:popupPanel id="statPane" autosized="true">
+			<h:graphicImage value="../../images/chargement.gif" alt="ai" />
+        Please wait...
+	</rich:popupPanel>
+
+	</h:form>
+</body>
+</html>

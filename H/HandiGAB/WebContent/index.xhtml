@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</h:head> 
+<body class="index">
+	
+	<p align="center"><img src="images/logoensi.jpg" style="height : 80px; width : 102px;"/><img class="logo_middle" src='images/logodiebold.jpg' style=" width : 196px; height : 93px;"/><img class="logo_middle" src='images/logoucbn.png' style="width : 202px; height : 70px;"/></p>
+			
+	<div>
+	 <header></header>
+    
+	
+	<h:form id="FrmForms">
+		<table style="width: 500px;" >
+		<tr height="20">
+		<td colspan="3">
+			<a4j:outputPanel ajaxRendered="true">
+			<h:messages infoClass="green" errorClass="red" />
+			</a4j:outputPanel>
+		</td>
+		</tr>	
+		<tr >
+		<td width="20%" align="right"><h:outputText value="Login" /></td>
+		<td width="80%" align="left" colspan="2"><h:inputText value="#{utilisateurFB.username}" maxlength="15" id="username" autocomplete="off" styleClass="zoneText" /><h:outputText value="*" styleClass="red" /></td>
+		</tr>
+		<tr>
+		<td align="right"><h:outputText value="password" /></td>
+		<td align="left" colspan="2"><h:inputSecret value="#{utilisateurFB.password}" maxlength="20" id="password" autocomplete="off" styleClass="zoneText" /><h:outputText value="*" styleClass="red" /></td>
+		</tr>
+		<tr>
+		<td align="right"></td>
+		<td align="left" width="20%"><a4j:commandButton value="#{key.button}" id="btnSaveRole" styleClass="btn" actionListener="#{utilisateurFB.connect}" render="FrmForms" /></td>
+		<td align="left" width="80%"></td>
+		</tr>
+		<tr height="30"><td colspan="3"></td></tr>
+		</table>
+	</h:form>
+		
+	
+	</div>	      
+        
+</body> 
+</html>

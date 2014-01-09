@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+
+		<security:authentication-manager>
+			<security:authentication-provider>
+				<security:password-encoder hash="sha"/>
+				<security:jdbc-user-service data-source-ref="dataSource"  
+					users-by-username-query="SELECT USERNAME, PASSWORD,ENABLED FROM CLT_UTILISATEUR WHERE USERNAME = ?"
+	            	authorities-by-username-query="SELECT R.ID, R.ROLENAME FROM CLT_ROLE R, CLT_UTILISATEUR U, CLT_ROLEUTILISATEUR RU WHERE R.ID = RU.CODEROLE AND RU.CODEUTILISATEUR = U.CODE AND U.USERNAME = ?"/>
+			</security:authentication-provider>
+		</security:authentication-manager>
+
+		<security:global-method-security pre-post-annotations="enabled">
+		</security:global-method-security>
+
+		<security:http  use-expressions="true" >
+			<security:intercept-url pattern="/index.xhtml"	access="permitAll" />
+			<security:intercept-url pattern="/css/**"		access="permitAll" />
+			<security:intercept-url pattern="/images/**"   	access="permitAll" />
+			<security:intercept-url pattern="/pages/**"		access="permitAll" />
+			<security:intercept-url pattern="/common/**"	access="permitAll" />
+			<security:intercept-url pattern="/axis2-web/**"	access="permitAll" />
+			<security:intercept-url pattern="/services/**"	access="permitAll" />
+			<security:intercept-url pattern="/script/**"	access="permitAll" />
+			<!-- <security:intercept-url pattern="/editerproduit.do"	access="ROLE_ADMIN" /> -->
+			<security:intercept-url pattern="/**" access="ROLE_USER" />
+			<security:intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')" />
+
+			<security:http-basic />
+			<!-- <security:form-login  /> -->
+			<!-- page d'echec d'authentification -->		
+			<!-- page d'authentification réussi . always-use-default-target pour forcer l'affichage de la default-target-url -->
+			<security:form-login login-page="/index.xhtml"
+				default-target-url="/common/home.xhtml" always-use-default-target="true" />					
+			<security:logout logout-success-url="/index.xhtml" invalidate-session="true"  />
+			
+			<!-- limitation du nombre de session qu'un utilisateur peut avoir à 1 -->
+<!-- 			<security:session-management session-fixation-protection="newSession" invalid-session-url="/timeout.jsp"> -->
+<!-- 				<security:concurrency-control max-sessions="1" error-if-maximum-exceeded="true"/> -->
+<!-- 			</security:session-management> -->
+			
+		</security:http>
+		
+</beans:beans>

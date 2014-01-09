@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Service  -->
+	
+	<bean id="roleManager"
+		class="handiGab.manager.impl.RoleManagerImpl">
+		<property name="roleDAO" ref="roleDAO" />
+		<property name="utilisateurDAO" ref="utilisateurDAO" />
+	</bean>
+
+	
+	<bean id="utilisateurManager"
+		class="handiGab.manager.impl.UtilisateurManagerImpl">
+<!-- 		<property name="agenceDAO" ref="agenceDAO" /> -->
+<!-- 		<property name="roleDAO" ref="roleDAO" /> -->
+		<property name="utilisateurDAO" ref="utilisateurDAO" />
+	</bean>
+
+	<bean id="carteManager"
+		class="handiGab.manager.impl.CarteManagerImpl">
+		<property name="carteDAO" ref="carteDAO" />
+		<property name="clientDAO" ref="clientDAO" />
+	</bean>
+	
+<!-- 	<bean id="agenceManager" -->
+<!-- 		class="handiGab.manager.impl.AgenceManagerImpl"> -->
+<!-- 		<property name="agenceDAO" ref="agenceDAO" /> -->
+<!-- 		<property name="structureDAO" ref="structureDAO" /> -->
+<!-- 		<property name="utilisateurDAO" ref="utilisateurDAO" /> -->
+<!-- 	</bean> -->
+
+
+</beans>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<h:head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+</h:head> 
+<body class="home" >
+	
+	<div id="entete">
+		<img alt="" src="../images/entet.jpg" />
+		<p>
+			<img alt="" src="../images/check.gif"  />  ENSIBANK AGENCE PRINCIPAL <br/><br/>
+			<img alt="" src="../images/home.png"   /> 17 Rue Claude Bloch, 14000 Caen <br/><br/>
+			<img alt="" src="../images/profil.gif" /> Fatoumata
+		</p>
+	</div>    
+	
+	<div id="bando">
+		<header>
+		<h:form id="deconect">
+			 <a4j:commandLink immediate="false" action="#{utilisateurFB.deconect}" style="float: right; color: #FFFFFF; margin-right: 2px;">
+     			 <span>Déconnexion</span>
+   			 </a4j:commandLink>  
+   			</h:form>
+       	</header>
+		<nav></nav>
+	</div>
+	
+	<div id="main">		
+		<div id="wrapper">
+			<ui:include src="menu.xhtml" />
+		</div>
+		
+		<div id="content"></div>
+		<br style="clear:both;" />
+	</div>
+	
+	<div id="enbas">
+		<a href="#">Version 1</a>
+		<img alt="PRESTATECH" src="../images/Logo.png" /> <p>&copy; 2014 Groupe 8</p>
+	</div>	    
+</body> 
+</html>

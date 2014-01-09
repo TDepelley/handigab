@@ -10,13 +10,30 @@
 
     <LinearLayout
         android:id="@+id/cardsLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="206dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/infoClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="206dp"
-        android:orientation="vertical" >
-
-    </LinearLayout>
+        android:layout_marginTop="14dp"
+        android:text="Vos cartes"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

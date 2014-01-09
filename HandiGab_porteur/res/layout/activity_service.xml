@@ -8,46 +8,68 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ServiceActivity" >
 
-    <TextView
-        android:id="@+id/cardTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp"
-        android:text="@string/cardNumberString" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:orientation="vertical" >
-        
+
         <Button
             android:id="@+id/withdrawal"
-            android:layout_width="136dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick = "launchWithdrawal"
-            android:text="@string/withdrawalString"
-            android:background="@drawable/button_normal_xml" />
+            android:background="@drawable/button_normal_xml"
+            android:onClick="launchWithdrawal"
+            android:text="@string/withdrawalString" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick = "launchAuthentification"
-            android:text="@string/accountString"
-            android:background="@drawable/button_normal_xml" />
+            android:background="@drawable/button_normal_xml"
+            android:onClick="launchAuthentification"
+            android:text="@string/accountString" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/information"
-            android:layout_width="136dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick = "launchInformation"
-            android:text="Informations"
-            android:background="@drawable/button_normal_xml" />
-        
+            android:background="@drawable/button_normal_xml"
+            android:onClick="launchInformation"
+            android:text="Informations" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/cardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:text="@string/cardNumberString"/>
+
+        <LinearLayout
+            android:id="@+id/serviceTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

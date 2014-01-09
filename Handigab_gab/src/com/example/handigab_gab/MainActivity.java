@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.handigab_gab.bluetooth.BluetoothConstants;
 import com.example.handigab_gab.bluetooth.BluetoothServerService;

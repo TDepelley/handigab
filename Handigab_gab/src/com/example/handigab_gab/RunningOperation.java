@@ -1,18 +1,5 @@
 package com.example.handigab_gab;
 
-import java.io.IOException;
-
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpResponseException;
-import org.ksoap2.transport.HttpTransportSE;
-import org.xmlpull.v1.XmlPullParserException;
-
-import com.example.handigab_gab.util.SystemUiHider;
-
-import communication.soap.SoapAccess;
-import communication.soap.SoapAccess.Authentication;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -57,12 +44,15 @@ public class RunningOperation extends Activity {
 		mBluetoothService = BluetoothServerService.getInstance(this, mHandler);
 	}
 	
-	
 	@Override
-	{
+	protected void onDestroy() {
+		super.onDestroy();
 	}
 
+	// The Handler that gets information back from the BluetoothChatService
+	private final Handler mHandler = new Handler() {
 		@Override
+		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case BluetoothConstants.MESSAGE_STATE_CHANGE:
 				if (D)
@@ -75,10 +65,13 @@ public class RunningOperation extends Activity {
 				case BluetoothServerService.STATE_CONNECTING:
 					Log.i(TAG, "State connecting");
 
+					break;
 				case BluetoothServerService.STATE_LISTEN:
 				case BluetoothServerService.STATE_NONE:
-    		protected void onPostExecute(String result) {
+					Log.i(TAG, "State unconnect");
+					finish();
 					break;
+				}
 				break;
 			case BluetoothConstants.MESSAGE_WRITE:
 				byte[] writeBuf = (byte[]) msg.obj;
@@ -99,12 +92,13 @@ public class RunningOperation extends Activity {
 				break;
 			case BluetoothConstants.MESSAGE_TOAST:
 				Toast.makeText(getApplicationContext(),
+						msg.getData().getString(BluetoothConstants.TOAST),
 						Toast.LENGTH_SHORT).show();
 				break;
-    			}
-        			String[] data = result.split("#");
-        			for (int i = 0; i < data.length; i++)
-        			{
+			}
+		}
+	};
+
 	/**
 	 * Permet d'envoyer un message à l'application porteur
 	 * @param message
@@ -112,18 +106,18 @@ public class RunningOperation extends Activity {
 	private void sendMessage(String message) {
 		// Check that we're actually connected before trying anything
 		if (mBluetoothService.getState() != BluetoothServerService.STATE_CONNECTED) {
+			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT)
 					.show();
 			return;
-        			}
+		}
 
 		// Check that there's actually something to send
 		if (message.length() > 0) {
 			// Get the message bytes and tell the BluetoothChatService to write
 			byte[] send = message.getBytes();
 			mBluetoothService.write(send);
-    			}
-    			
-    		}
+		}
+	}
 	
 	/**
 	 * Permet de recevoir un message de l'application porteur
@@ -133,7 +127,8 @@ public class RunningOperation extends Activity {
 		Toast.makeText(getApplicationContext(),
 				"Message reçu : "+message,
 				Toast.LENGTH_SHORT).show();
-    	}.execute(new String ("R#77#77"));
+		
+		// test de connexion
 		if(message.equals("TEST")) {
 			sendMessage("TEST OK");
 		}

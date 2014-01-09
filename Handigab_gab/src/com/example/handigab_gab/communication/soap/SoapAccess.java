@@ -79,14 +79,14 @@ public class SoapAccess {
 		}    
 	}
 
-	public class ConsultAccount extends AsyncTask<String, Void, String>{
+	public class withdrawOrConsult extends AsyncTask<String, Void, String>{
 		private Exception except = null;
 		
 		@Override
 		protected String doInBackground(String... params) {
 			SoapObject result = queryPrimitive(RETRAIT_CONSULT_COMPLETE, RETRAIT_CONSULT, params[0]);
 			String valeur = null;
-			if (result.getPropertyAsString(0) != null)
+			if (result != null && result.getPropertyAsString(0) != null)
 			{
 				valeur = result.getPropertyAsString(0);
 			}

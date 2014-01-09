@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+		getActionBar().hide();
+		
 		// Set up the window layout
 		setContentView(R.layout.activity_main);
 
@@ -78,6 +80,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
+		
 	}
 
 	@Override
@@ -178,6 +181,7 @@ public class MainActivity extends Activity {
 					// TODO changement etat vers en connexion
 					break;
 				case BluetoothServerService.STATE_LISTEN:
+					break;
 				case BluetoothServerService.STATE_NONE:
 					Log.i(TAG, "State unconnect");
 					// TODO changement etat non connect
@@ -191,8 +195,9 @@ public class MainActivity extends Activity {
 				break;
 			case BluetoothConstants.MESSAGE_READ:
 				byte[] readBuf = (byte[]) msg.obj;
-				String messageRecu = new String(readBuf, 0, msg.arg1);
-
+				// forward to next handler
+				Log.d(TAG, "Forward message read to next handler");
+				mBluetoothService.getHandler().obtainMessage(BluetoothConstants.MESSAGE_READ, -1, -1, readBuf).sendToTarget();
 				break;
 			case BluetoothConstants.MESSAGE_DEVICE_NAME:
 

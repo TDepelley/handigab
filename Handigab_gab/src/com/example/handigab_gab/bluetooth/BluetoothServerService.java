@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import javax.crypto.CipherInputStream;
 import javax.crypto.CipherOutputStream;
@@ -79,7 +80,7 @@ public class BluetoothServerService {
     public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
     public static final int STATE_SHUTDOWN = 4;
-
+    
     /**
      * Constructor. Prepares a new MainActivity session.
      * @param context  The UI Activity Context
@@ -444,7 +445,7 @@ public class BluetoothServerService {
 
             // Get the BluetoothSocket input and output streams
             try {
-                // instanciation et echange des clés
+                // instanciation et echange des cl��s
                 cipherSystem.shareKeys(socket);
                 
                 tmpIn = socket.getInputStream();
@@ -488,8 +489,9 @@ public class BluetoothServerService {
                 try {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
-
-                    Log.d(TAG, "Message recu : "+(new String(buffer)));
+                    
+                    String msg = new String(buffer,0,bytes);
+                    Log.d(TAG, "Message recu : "+msg);
                     
                     // Send the obtained bytes to the UI Activity
                     mHandler.obtainMessage(BluetoothConstants.MESSAGE_READ, bytes, -1, buffer)
@@ -532,5 +534,9 @@ public class BluetoothServerService {
                 Log.e(TAG, "close() of connect socket failed", e);
             }
         }
+    }
+    
+    public Handler getHandler() {
+		return mHandler;	
     }
 }

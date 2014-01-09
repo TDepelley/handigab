@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.example.handigab_gab.bluetooth.BluetoothConstants;
 import com.example.handigab_gab.bluetooth.BluetoothServerService;
 import com.example.handigab_gab.util.SystemUiHider;
+import communication.soap.SoapAccess;
+import communication.soap.SoapAccess.Authentication;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -43,6 +45,57 @@ public class RunningOperation extends Activity {
 		// Initialize the BluetoothChatService to perform bluetooth connections
 		mBluetoothService = BluetoothServerService.getInstance(this, mHandler);
 	}
+	
+	
+	@Override
+	protected void onStart()
+	{
+		super.onStart();
+    	//Verification de l'existence ou non d'une transaction
+		Toast.makeText(RunningOperation.this, "lancement du service SOAP", Toast.LENGTH_SHORT).show();
+		//Service SOAP
+    	//String _URL = "http://192.168.214.205:8280/HandiGABServer/services/ConsultationWS?wsdl";   FATOUMATA
+    	String _URL = "http://192.168.215.226:8080/HandiGABServer/services/ConsultationWS?wsdl";    	//TUG
+    	//String _URL = "http://192.168.43.245:8280/HandiGABServer/services/retraitConsultationSolde?wsdl";
+
+    	SoapAccess service = new SoapAccess(_URL);
+    	service.new Authentication(){
+    		protected void onPostExecute(String result) {
+    			if (result == null)
+    			{
+    				Toast.makeText(RunningOperation.this, "Probl��me de connexion au serveur", Toast.LENGTH_SHORT).show();
+    			}
+    			else
+    			{
+        			String[] data = result.split("#");
+        			for (int i = 0; i < data.length; i++)
+        			{
+        				Toast.makeText(RunningOperation.this, data[i], Toast.LENGTH_SHORT).show();	
+        			}
+    			}
+    			
+    		}
+    	
+    	}.execute(new String ("R#77#77"));
+
+	}
+	
+	@Override
+	protected synchronized void onResume() {
+		super.onResume();
+//		String test = null;
+//		receiveMessage(test);
+//		
+//		if (test == null) {
+//			Toast.makeText(getApplicationContext(), "null", Toast.LENGTH_SHORT).show();
+//		} else {
+//			Toast.makeText(getApplicationContext(), test, Toast.LENGTH_SHORT).show();
+//
+//		}
+		
+	
+	}
+	
 	
 	@Override
 	protected void onDestroy() {

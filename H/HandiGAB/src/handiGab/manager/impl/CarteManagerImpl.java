@@ -64,6 +64,7 @@ public class CarteManagerImpl extends BaseManager implements CarteManager
 		{
 			if(carteDAO.exists(carteDTO.getId()))
 			{
+				
 				carte=carteDAO.get(carteDTO.getId());
 
 				if(clientDAO.exists(carte.getIdClient().getId()))
@@ -80,6 +81,13 @@ public class CarteManagerImpl extends BaseManager implements CarteManager
 						retour=client.getCompte().getSolde().toString();
 					}
 				}
+				else
+				{
+					retour="CLIENT-INEXISTANT";
+				}
+			}else
+			{
+				retour="CARTE-INEXISTANTE";
 			}
 
 		} catch (Exception e) 
@@ -110,7 +118,7 @@ public class CarteManagerImpl extends BaseManager implements CarteManager
 						retour= "PIN-INVALIDE";
 						throw new Exception("Exception : PIN invalide");
 					}
-					
+
 					else if(client.getCompte().getSolde()-carteDTO.getMontant()<0)
 					{
 						retour="SOLDE-INSUFFISANT";
@@ -120,13 +128,20 @@ public class CarteManagerImpl extends BaseManager implements CarteManager
 						retour="OK";
 					}
 				}
+				else
+				{
+					retour="CLIENT-INEXISTANT";
+				}
+			}else
+			{
+				retour="CARTE-INEXISTANTE";
 			}
 
 		} catch (Exception e) 
 		{
 
 		}
-return retour;
+		return retour;
 
 
 	}

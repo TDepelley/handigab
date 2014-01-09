@@ -1,7 +1,6 @@
 package com.example.handigab_gab;
 
 
-import android.os.SystemClock;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;

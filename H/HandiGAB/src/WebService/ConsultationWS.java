@@ -4,6 +4,7 @@ import handiGab.manager.CarteManager;
 
 import org.apache.commons.lang.StringUtils;
 
+import utils.SysEnv;
 import utils.Utiles;
 import utils.WebService;
 
@@ -17,6 +18,7 @@ import utils.WebService;
 
 public class ConsultationWS extends WebService 
 {
+	
 	CarteManager carteManager= (CarteManager) getBean("carteManager");
 	
 	public String  retraitConsultationSolde(String trame)
@@ -37,20 +39,25 @@ public class ConsultationWS extends WebService
 				carte.setTrame(trame);
 				carte.setId(elementTrame[1]);
 				carte.setPin(elementTrame[2]);
+				carte.setDateExpirationCarte(SysEnv.ToDayTimeStamp());
+				carte.setEtatCarte("");
+				carte.setNomEmbosse("");
+				carte.setLibelleProduit("");
+				
 
 				//carteManager.authentifiePorteur(carte);
 				
-				if(StringUtils.equalsIgnoreCase(elementTrame[1], "R"))
+				if(StringUtils.equalsIgnoreCase(elementTrame[0], "R"))
 				{
 					 //codeservice#numCarte#codePin
 					carte.setMontant( Double.parseDouble(elementTrame[2]));
-					carteManager.consultationSolde(carte);
+					codeRetour=carteManager.consultationSolde(carte);
 				} else 
-					if(StringUtils.equalsIgnoreCase(elementTrame[1], "C"))
+					if(StringUtils.equalsIgnoreCase(elementTrame[0], "C"))
 					{
 						 //codeservice R pour retrait et C pour Consultation
 						 //codeservice#numCarte#codePin#Montant
-						carteManager.retrait(carte);
+						codeRetour=carteManager.retrait(carte);
 					}
 
 			}

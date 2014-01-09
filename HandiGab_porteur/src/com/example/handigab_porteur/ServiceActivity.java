@@ -11,15 +11,25 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ServiceActivity extends Activity {
-	public static final String PREFS_NAME = "cardFile";
+	SharedPreferences settings;
+	String pref_name = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_service);
-		//TODO: rŽecrire la string cardNumberString -> n¡ "cardNumberString"
-		SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+		
+		Intent intent= getIntent();
+		Bundle b = intent.getExtras();
+		if(b!=null) {
+			pref_name = b.get("pref").toString();
+		}
+		
+		if (!pref_name.isEmpty())
+			settings = getSharedPreferences(pref_name, 0);
+		
 		String nbCard = settings.getString("cardNumber", "");
+		
 		if (!nbCard.equals("")){
 			TextView textView = (TextView)this.findViewById(R.id.cardTitle);
 			textView.setText("Carte n¡"+nbCard);
@@ -34,12 +44,29 @@ public class ServiceActivity extends Activity {
     }
 	
 	public void launchWithdrawal(View v){
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("flag", "1");
+		editor.commit();
+		
 		Intent intent = new Intent(this, WithdrawalActivity.class);
+		intent.putExtra("pref",pref_name);
 		startActivity(intent);
 	}
 	
 	public void launchAuthentification(View v){
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString("flag", "0");
+		editor.commit();
+		
 		Intent intent = new Intent(this, AuthentificationActivity.class);
+		intent.putExtra("pref",pref_name);
+		startActivity(intent);
+	}
+	
+	public void launchInformation(View v){
+		
+		Intent intent = new Intent(this, InformationActivity.class);
+		intent.putExtra("pref",pref_name);
 		startActivity(intent);
 	}
 }

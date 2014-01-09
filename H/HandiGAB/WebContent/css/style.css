@@ -1,0 +1,585 @@
+@CHARSET "ISO-8859-1";
+
+.red {
+    color: red;
+    text-align: center;
+    font-size: 12px;
+}
+
+.green {
+    color: green;
+    text-align: center;
+    font-size: 12px;
+}
+
+.index {	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	margin-top: 12%;
+}
+
+.index div {	    
+	height: auto;
+	width: 550px;
+	margin-top: 5px;
+	margin: auto;
+	border:1px solid #DAD5CE;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-o-border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	behavior: url("script/PIE.htc");
+	text-align: center;
+}
+
+.index div header, .index div footer {
+	margin: 0px;
+	height: 40px;
+	background-color: #766F64;
+}
+
+.index  table {	
+	align:center;
+	margin:auto;
+}
+
+.index input{
+	height :23px; 	
+	width: 90%;	
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.index input:FOCUS {
+	border:2px solid #DAD5CE;
+}
+
+.index button {			
+	background-color:	#62B0FF;
+	height:				25px;
+	width:100px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 		 5px 5px 5px 5px;
+	border-radius:			 5px 5px 5px 5px;
+	behavior: 				 url(script/PIE.htc);
+    border:1px solid #3b5998;
+}
+
+/*
+-----------------------------------------------------------------------------------
+-                 Class style de la page d'acceuil                                -
+-----------------------------------------------------------------------------------
+*/
+
+.home {	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	height: 100%;
+	width: 94%;
+	margin-top: 10px;
+	margin-left:3%;
+	margin-right:3%;
+	text-align: left;
+}
+
+.home div[id="entete"] {	    
+	height: 80px;
+	width: 100%;
+	border-left:1px solid #DAD5CE;
+	border-right:1px solid #DAD5CE;
+	border-bottom:0px solid #DAD5CE;
+	border-top:1px solid #DAD5CE;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-o-border-radius: 5px 5px 0px 0px;
+	-ms-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	behavior: url(script/PIE.htc);
+}
+
+.home div[id="entete"] img {
+	float:left;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	width: 70px;
+	height: 70px;
+}
+
+.home div[id="entete"] p {
+	text-align: left;
+	float:right;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	
+}
+
+.home div[id="entete"] p img {
+	float:left;
+	margin-top: 0px;
+	margin-left: 5px;
+	margin-bottom: 0px;
+	padding-right:5px;
+	width: 12px;
+	height: 12px;
+}
+
+.home div[id="bando"] {	    	
+	height: 40px;
+	width: 100%;	
+	border-left:1px solid #DAD5CE;
+	border-right:1px solid #DAD5CE;
+	border-bottom:0px solid #DAD5CE;
+	border-top:0px solid #DAD5CE;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-o-border-radius: 0px 0px 0px 0px;
+	-ms-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	behavior: url(../script/PIE.htc);
+}
+
+.home div[id="bando"] header {	
+	text-align: right;
+	background-color: #766F64;
+	height: 40px;
+	color: black;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-o-border-radius: 5px 5px 0px 0px;
+	-ms-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	behavior: url("../script/PIE.htc");      
+	    
+}
+
+.home div[id="bando"] nav{		
+	background-color: #FFFFFF; 
+	color:#05619b; 
+	margin-top: -25px;
+	height: 25px;
+	width: 85%;
+	float:right;
+	-webkit-border-radius:	 0px 0px 0px 0px;
+	-moz-border-radius:		 0px 0px 0px 0px;
+	-o-border-radius:		 0px 0px 0px 0px;
+	-ms-border-radius: 	 	 0px 0px 0px 0px;
+	border-radius:			 50px 0px 0px 0px;
+	behavior: 				 url(../script/PIE.htc);	
+}
+
+.home div[id="main"] {	  
+	width: 100%;		
+	border-left:1px solid #766F64;
+	border-right:1px solid #766F64;
+	border-bottom:0px solid #766F64;
+	border-top:0px solid #766F64;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-o-border-radius: 0px 0px 0px 0px;
+	-ms-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	behavior: url(script/PIE.htc);
+}
+
+.home div[id="wrapper"] {	 
+	width: 15%; 
+	float:left;
+	margin-top:auto;
+	border-left:0px solid #766F64;
+	border-right:1px solid #DAD5CE;
+	border-bottom:0px solid #766F64;
+	border-top:1px solid #FFFFFF;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-o-border-radius: 0px 0px 0px 0px;
+	-ms-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	behavior: url(script/PIE.htc);
+}
+
+.home div[id="content"] {	
+	width: 84%;
+	margin-left: 15%;
+	vertical-align: top;
+	padding-left:10px;	
+	border: 0px solid #766F64;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	-moz-border-radius: 0px 0px 0px 0px;
+	-o-border-radius: 0px 0px 0px 0px;
+	-ms-border-radius: 0px 0px 0px 0px;
+	border-radius: 0px 0px 0px 0px;
+	behavior: url(script/PIE.htc);
+}
+
+.home div[id="enbas"] {	    
+	background-color: #766F64;
+	height: 22px;
+	width: 100%;
+	border:1px solid #766F64;
+	clear:both;	
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-o-border-radius: 0px 0px 5px 5px;
+	-ms-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	behavior: url(script/PIE.htc);
+	/*background-image: -webkit-linear-gradient(top, rgb(59, 89, 152), rgb(25, 60, 120));
+	background-image: -moz-linear-gradient(top, rgb(59, 89, 152), rgb(25, 60, 120));
+	background-image: -o-linear-gradient(top, rgb(59, 89, 152), rgb(25, 60, 120));
+	background-image: -ms-linear-gradient(top, rgb(59, 89, 152), rgb(25, 60, 120));	
+	background-image: linear-gradient(top, rgb(59, 89, 152), rgb(25, 60, 120));	*/
+}
+
+.home div[id="enbas"] img {
+	float:right;
+	margin: 2px; 
+	
+}
+
+.home div[id="enbas"] p {
+	float:right;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color: black;
+}
+
+.home div[id="enbas"] a {
+	float:left;
+	margin-left:10px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color: black;
+}
+
+/*
+-------------------------------------------------------------------------
+-                          Formulaire
+-------------------------------------------------------------------------
+*/
+
+.zoneMessage {
+	width: 100%;
+	height: 30px;	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font: normal;
+	color: #000000;
+	border: 2px solid gray;
+	background-color : #DADADA;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-o-border-radius: 5px 5px 0px 0px;
+	-ms-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+	behavior: url("script/PIE.htc");
+}
+
+.zoneForms {
+	width: 100%;
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font: normal;
+	color: #000000;
+	border-bottom: 2px solid gray;
+	border-left: 2px solid gray;
+	border-right: 2px solid gray;
+	border-top: 0px solid gray;
+	background-color : #FFFFFF;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-o-border-radius: 0px 0px 5px 5px;
+	-ms-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	behavior: url("script/PIE.htc");
+}
+
+.tableFrom {
+	width: 100%;
+	border:0px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font:normal;
+	color:#000000;
+}
+
+.tableBoutton {
+	width: 100%;
+	border:0px solid #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+}
+
+.zoneCode{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+	width: 30%;
+	height:20px;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.zoneText{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+	width: 70%;
+	height:20px;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.zoneList{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+	width: 70%;
+	height:23px;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.zoneDate{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+	width: 20%;
+	height:20px;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.ZoneTextArea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color:#000000;
+	width: 93%;
+	height : 40px;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnInit{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/cancel.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnNews{
+  	font-size: 11px; 
+  	font-weight: normal; 
+  	font-family: Verdana;
+  	height: 26px;
+    width: 120px;
+  	/*background: #E1DDD9 url("../images/new.gif") no-repeat;*/
+	padding-left: 25px;
+	text-align: left;
+	border: 1px solid #3b5998;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-o-border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	behavior: url("script/PIE.htc");
+	background-image: url("./../images/new.gif");
+	background-color: Silver;
+	background-repeat: no-repeat
+}
+
+.btnSave{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/save.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnUpda{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/save_as.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnFind{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/find.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnDell{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/exit.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.btnClos{
+  	font-size:11px; 
+  	font-weight: normal; 
+  	font-family:Verdana;
+  	height: 26px;
+    width: 120px;
+  	background:#E1DDD9 url('../images/no.gif');
+  	background-repeat : no-repeat;
+	padding-left:25px;
+	text-align: left;
+	border:1px solid #3b5998;
+	-webkit-border-radius:	 5px 5px 5px 5px;
+	-moz-border-radius:		 5px 5px 5px 5px;
+	-o-border-radius:		 5px 5px 5px 5px;
+	-ms-border-radius: 	     5px 5px 5px 5px;
+	border-radius: 	    	 5px 5px 5px 5px;
+	behavior: 				url(script/PIE.htc);
+}
+
+.even-row {
+        background-color: #FCFFFE;
+        }
+ 
+        .odd-row {
+        background-color: #ECF3FE;
+        }
+ 
+        .active-row {
+        background-color: #FFEBDA !important;
+        cursor: pointer;
+        }
+        
+        .titre {
+	background-color: #FFFF99;
+	color: #000000;
+}
+
+
+
+
+.stylePanelHeader1 {
+	background-color: #766F64;
+	border: 1px solid #FF0000;
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#000000;
+	font-weight: normal;	
+}
+
+.stylePanelHeader {
+	background-color: #FFFFFF;
+	border: 1px solid #766F64;
+	vertical-align: top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color:#000000;
+	font-weight: normal;	
+}

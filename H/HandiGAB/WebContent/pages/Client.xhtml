@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+</h:head>
+<body class="home">
+
+	<div id="bando">
+	<header> <a href="../j_spring_security_logout"
+			style="float: right; color: black; margin-right: 2px;">Déconnexion</a>
+		</header>
+		<nav></nav>
+		</div>
+
+	<div id="main">
+		<div id="wrapper">
+			<!-- <ui:include src="../../images/menu.xhtml" />-->
+		</div>
+		<div id="content">
+			<h:form id="FrmClient">
+				<rich:tabPanel switchType="client">
+				
+				<rich:tab header="Client" name="Client" id="Client">
+						<a4j:outputPanel id="panelClient">
+						<fieldset>
+								<legend><h:outputText value="Formulaire Client" /></legend>
+								<table border="0" cellpadding="2" cellspacing="2" width="100%" align="center" class="tableFrom">
+								<tr>
+									<td width="15%" align="right"><h:outputText value="matricule" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.id}" id="id" maxlength="15" autocomplete="off" styleClass="zoneText" readonly="#{clientFB.saveAction}" /><h:outputText value="*" styleClass="red" /></td>
+									<td width="15%" align="right"><h:outputText value="nom" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.nom}" id="libelle" maxlength="100" autocomplete="off" styleClass="zoneText" /> <h:outputText value="*" styleClass="red" /></td>
+								</tr>
+								<tr>
+									<td align="right"><h:outputText value="prenom" /></td>
+									<td align="left"><h:inputText value="#{clientFB.prenom}" id="prenom" maxlength="100" autocomplete="off" styleClass="zoneText" /> <h:outputText value="*" styleClass="red" /></td>
+									<td width="15%" align="right"><h:outputText	value="date naissance" />&nbsp;</td>
+									<td width="35%" align="left"><rich:calendar id="dateNaiss"	value="#{clientFB.dateNaissance}" datePattern="dd/MM/yyyy" styleClass="zoneText"	disabled="true" /></td>
+								</tr>
+								<tr>
+									<td width="15%" align="right"><h:outputText value="email" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.email}" id="email" maxlength="100" autocomplete="off" styleClass="zoneText" readonly="#{clientFB.saveAction}" /><h:outputText value="*" styleClass="red" /></td>
+									<td width="15%" align="right"><h:outputText value="Fax" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.fax}" id="fax" maxlength="100" autocomplete="off" styleClass="zoneText" /> </td>
+								</tr>
+								<tr>
+									<td width="15%" align="right"><h:outputText value="numero piece" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.numeroPiece}" id="numeroPieceIdentification" maxlength="100" autocomplete="off" styleClass="zoneText" readonly="#{clientFB.saveAction}" /><h:outputText value="*" styleClass="red" /></td>
+									<td width="15%" align="right"><h:outputText value="telephone" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.telephone}" id="telephone" maxlength="100" autocomplete="off" styleClass="zoneText" /> <h:outputText value="*" styleClass="red" /></td>
+								</tr>
+								<tr>
+									<td width="15%" align="right"><h:outputText value="compte" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.compte}" id="compte" maxlength="100" autocomplete="off" styleClass="zoneText" readonly="#{clientFB.saveAction}" /><h:outputText value="*" styleClass="red" /></td>
+									<td width="15%" align="right"><h:outputText value="adresse" /></td>
+									<td width="35%" align="left"><h:inputText value="#{clientFB.adresse}" id="adresse" maxlength="500" autocomplete="off" styleClass="zoneText" /> <h:outputText value="*" styleClass="red" /></td>
+								</tr>
+								</table>
+							</fieldset>
+							<table border="0" cellpadding="5" cellspacing="5" width="100%" class="tableBoutton">
+							<tr>
+							<td width="100%" align="right">
+								<a4j:commandButton value="Nouveau" id="btnNewsClient" styleClass="btnNews" actionListener="#{clientFB.news}" render="panelClient" />&nbsp; 
+								<a4j:commandButton value="Enregistrer" id="btnSaveClient" styleClass="btnSave" actionListener="#{clientFB.save}" render="panelClient" onclick="if(!confirm('')) return false;" />&nbsp;
+								<a4j:commandButton value="Supprimer" id="btnDellClient" styleClass="btnDell" actionListener="#{clientFB.dell}" render="panelClient" onclick="if(!confirm('')) return false;" disabled="#{clientFB.btnAction}" />&nbsp; 
+								<a4j:commandButton value="Rechercher" id="btnFindClient" styleClass="btnFind" render="panelClient" onclick="#{rich:component('findPopup')}.show(); return false;" />
+							</td>
+							</tr>
+							</table>
+							
+							<rich:dataTable value="#{clientFB.clientList}" var="vClientList" iterationStatusVar="it" id="tableClient" rows="20" style="width: 100%;" rowClasses="odd-row, even-row">
+							<rich:column style="text-align: center;width:1%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}"><f:facet name="header">#</f:facet>#{it.index}</rich:column>
+
+								<rich:column style="text-align: center;width:10%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="id" /></f:facet>
+								<h:outputText value="#{vClientList.id}" />
+								</rich:column>
+
+								<rich:column style="text-align: center;width:15%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="nom" /></f:facet>
+								<h:outputText value="#{vClientList.nom}" />
+								</rich:column>
+
+								<rich:column style="text-align: center;width:15%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="prenom" /></f:facet>
+								<h:outputText value="#{vClientList.prenom}" />
+								</rich:column>
+								
+								<rich:column style="text-align: center;width:15%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="compte" /></f:facet>
+								<h:outputText value="#{vClientList.compte}" />
+								</rich:column>
+								
+								<rich:column style="text-align: center;width:15%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="solde" /></f:facet>
+								<h:outputText value="#{vClientList.solde}" />
+								</rich:column>
+
+								<rich:column style="text-align: center;width:1%;" styleClass="#{(vClientList.id == clientFB.id)?'titre':''}">
+								<f:facet name="header"><h:outputText value="" /></f:facet>
+								<a4j:commandLink id="iDedit" actionListener="#{clientFB.edit}" render="panelClient">
+								<h:graphicImage value="../images/consulter.png" title="" alt="" style="text-align:center;border:0" />
+								</a4j:commandLink>
+								</rich:column>
+
+								<f:facet name="footer"><rich:dataScroller /></f:facet>
+							</rich:dataTable>
+						</a4j:outputPanel>
+				</rich:tab>
+				
+				</rich:tabPanel>
+				</h:form>
+				</div>
+				<br style="clear: both;" />
+				</div>
+				<div id="enbas">
+		<a href="#">Version 1</a> <img alt="ENSIBANK"
+			src="../images/Logo.png" />
+		<p>&copy; 2014 Groupe 8</p>
+	</div>
+				</body>
+					
+</html>

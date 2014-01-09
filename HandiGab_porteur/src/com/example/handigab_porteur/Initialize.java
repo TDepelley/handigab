@@ -1,6 +1,5 @@
 package com.example.handigab_porteur;
 
-import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -10,17 +9,15 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Initialize extends Activity {
 	String cardNumber=null;
 	String lastName=null;
-	String firstname=null;
+	String firstName=null;
 	String bankName=null;
 	String date=null; //MMAA
 	int cardType=0; //1=Mastercard 2=Visa 3=CB
@@ -91,9 +88,8 @@ public class Initialize extends Activity {
 		if (dateString.length()!=4) return false;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("MMyy");
-			Date d = sdf.parse(dateString);
+			sdf.parse(dateString);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			return false;
 		}
 		
@@ -123,7 +119,7 @@ public class Initialize extends Activity {
 		
 		tmp = textViewDate.getText().toString();
 		test = verifyDate(tmp);
-		if (test)editor.putInt("date", Integer.parseInt(tmp));
+		if (test) editor.putString("date", tmp);
 		else return;
 		
 		if (cardType==0) return;

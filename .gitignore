@@ -152,11 +152,9 @@ ClientBin/
 *.publishsettings
 
 # RIA/Silverlight projects
-Generated_Code/
 
 # Backup & report files from converting an old project file to a newer
 # Visual Studio version. Backup files are not needed, because we have git ;-)
-_UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
@@ -216,3 +214,11 @@ pip-log.txt
 
 Handigab_gab/bin/
 Handigab_gab/gen/
+.metadata/
+HandiGab_porteur/bin/AndroidManifest.xml
+/Servers/
+HandiGab_porteur/.settings/org.eclipse.jdt.core.prefs
+
+Handigab_gab/bin/AndroidManifest.xml
+
+RemoteSystemsTempFiles/.project

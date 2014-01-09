@@ -5,17 +5,25 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="18"
-        android:targetSdkVersion="18" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
+        android:name="HandiGabPorteurApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+       	android:theme="@android:style/Theme.NoTitleBar"
+       	android:label="@string/app_name"
+       	>
+       
         <activity
             android:name="com.example.handigab_porteur.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" 
+            android:clearTaskOnLaunch="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,36 +32,63 @@
         </activity>
         <activity
             android:name="com.example.handigab_porteur.Initialize"
-            android:label="@string/title_activity_initialize" >
+            android:label="@string/title_activity_initialize"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.ServiceActivity"
-            android:label="@string/title_activity_service" >
+            android:label="@string/title_activity_service"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.WithdrawalActivity"
-            android:label="@string/title_activity_withdrawal" >
+            android:label="@string/title_activity_withdrawal"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.AuthentificationActivity"
-            android:label="@string/title_activity_authentification" >
+            android:label="@string/title_activity_authentification"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.Wait"
-            android:label="@string/title_activity_wait" >
+            android:label="@string/title_activity_wait"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.Money"
-            android:label="@string/title_activity_money" >
+            android:label="@string/title_activity_money"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.Account"
-            android:label="@string/title_activity_account" >
+            android:label="@string/title_activity_account"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
         <activity
             android:name="com.example.handigab_porteur.AmountActivity"
-            android:label="@string/title_activity_amount" >
+            android:label="@string/title_activity_amount"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
+        </activity>
+        <activity
+            android:name="com.example.handigab_porteur.CardsActivity"
+            android:label="@string/title_activity_cards"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
+        </activity>
+        <activity
+            android:name="com.example.handigab_porteur.InformationActivity"
+            android:label="@string/title_activity_information"
+            android:screenOrientation="portrait"
+            android:finishOnTaskLaunch="true" >
         </activity>
     </application>
-
+   
 </manifest>

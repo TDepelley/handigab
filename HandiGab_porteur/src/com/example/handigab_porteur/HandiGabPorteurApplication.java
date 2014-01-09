@@ -148,7 +148,8 @@ public class HandiGabPorteurApplication extends Application {
 			case BluetoothConstants.MESSAGE_READ:
 				byte[] readBuf = (byte[]) msg.obj;
 				// construct a string from the valid bytes in the buffer
-				String readMessage = new String(readBuf, 0, msg.arg1);
+				//String readMessage = new String(readBuf, 0, msg.arg1);
+				String readMessage = new String(readBuf, 0, readBuf.length);
 				receiveMessage(readMessage);
 				break;
 			case BluetoothConstants.MESSAGE_DEVICE_NAME:
@@ -241,6 +242,9 @@ public class HandiGabPorteurApplication extends Application {
 			byte[] send = new byte[message.length()];
 			send = message.getBytes();
 			Log.e("Error",send.toString());
+			
+			if (send==null) Log.e("Error2","HandiGabPorteurApplication");
+			
 			mBluetoothService.write(send);
 		}
 	}
@@ -250,7 +254,7 @@ public class HandiGabPorteurApplication extends Application {
 	 * @param message
 	 */
 	public void receiveMessage(String message) {
-		Toast.makeText(getApplicationContext(),	"Message recu : "+message,	Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(),	"Message recu :"+message,	Toast.LENGTH_SHORT).show();
 	}
 
 	public void setNbEssai(int nbEssai) {

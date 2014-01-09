@@ -169,6 +169,7 @@ public class Wait extends Activity {
 
 		if (flag.equals("") || cardNumber.equals("") || bankName.equals("")) {
 			Log.e("Error","data error");
+			finish();
 			return;
 		}
 
@@ -177,7 +178,6 @@ public class Wait extends Activity {
 		if(flag.equals("1"))
 			data = data +";"+amount;
 
-		//adata=data+"\0";
 		app = (HandiGabPorteurApplication) getApplication();
 		app.sendMessage(data);
 		Log.e("Error",data);
@@ -200,9 +200,7 @@ public class Wait extends Activity {
 					break;
 				case BluetoothClientService.STATE_CONNECTING:
 					nbEssai++;
-					Toast.makeText(getApplicationContext(),
-							getString(R.string.search_gab),
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(),getString(R.string.search_gab),Toast.LENGTH_SHORT).show();
 					break;
 				case BluetoothClientService.STATE_NONE:
 					//setStatus(R.string.title_not_connected);
@@ -216,13 +214,13 @@ public class Wait extends Activity {
 				String writeMessage = new String(writeBuf);
 				break;
 			case BluetoothConstants.MESSAGE_READ:
-				
-				byte[] readBuf = (byte[]) msg.obj;
+				Log.d("Error", "read1");
+				byte[] readBuf = (byte[])msg.obj;
 				// construct a string from the valid bytes in the buffer
 				String readMessage = new String(readBuf, 0, msg.arg1);
 				app.receiveMessage(readMessage);
 
-				Log.d("Error", "read");
+				Log.d("Error", "read2");
 				
 				flag = settings.getString("flag", "");
 				Intent intent =null;

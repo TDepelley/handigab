@@ -1,6 +1,5 @@
 package com.example.handigab_porteur;
 
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import com.example.handigab_porteur.R;
@@ -35,13 +34,9 @@ public class Money extends Activity {
 		
 		new Handler().postDelayed(new Runnable() {
 			public void run() {
-				Intent i = new Intent(Money.this, CardsActivity.class);
-				startActivity(i);
 				finish();
 			}
 		},TIMEOUT);
-		
-		finish();
 	}
 
 	@Override

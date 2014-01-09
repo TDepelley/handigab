@@ -340,7 +340,7 @@ public class BluetoothClientService {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
 
-                    Log.d("Error", "Message recu : "+(new String(buffer)));
+                    Log.d("Error", "Message recu : "+(new String(buffer,0,bytes)));
                     
                     // Send the obtained bytes to the UI Activity
                     mHandler.obtainMessage(BluetoothConstants.MESSAGE_READ, bytes, -1, buffer)
@@ -360,6 +360,7 @@ public class BluetoothClientService {
         public void write(byte[] buffer) {
             try {
             	Log.d(TAG, "Write in socket "+(new String(buffer, 0, buffer.length)));
+            	if (buffer==null) Log.e("Error2","BluetoothClientService");
                 mmOutStream.write(buffer);
                 mmOutStream.flush();
 

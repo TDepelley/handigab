@@ -70,7 +70,7 @@ public class RunningOperation extends Activity {
 				switch (msg.arg1) {
 				case BluetoothServerService.STATE_CONNECTED:
 					Log.i(TAG, "State connected");
-					// TODO changement etat vers connecté
+					// TODO changement etat vers connecte
 					break;
 				case BluetoothServerService.STATE_CONNECTING:
 					Log.i(TAG, "State connecting");
@@ -106,7 +106,7 @@ public class RunningOperation extends Activity {
         			for (int i = 0; i < data.length; i++)
         			{
 	/**
-	 * Permet d'envoyer un message à l'application porteur
+	 * Permet d'envoyer un message a l'application porteur
 	 * @param message
 	 */
 	private void sendMessage(String message) {
@@ -131,7 +131,7 @@ public class RunningOperation extends Activity {
 	 */
 	private void receiveMessage(String message) {
 		Toast.makeText(getApplicationContext(),
-				"Message reçu : "+message,
+				"Message recu : "+message,
 				Toast.LENGTH_SHORT).show();
     	}.execute(new String ("R#77#77"));
 		if(message.equals("TEST")) {

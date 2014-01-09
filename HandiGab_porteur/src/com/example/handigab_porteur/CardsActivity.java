@@ -37,16 +37,31 @@ public class CardsActivity extends Activity {
 		
 		nbCard=2;
 		card1 = new ArrayList<String>(); 
-		card2 = new ArrayList<String>(); 
 		
+		String cardNumber="1234567890123456";
+		String date="0115";
+		String lastName="DUPONT";
+		String firstName="Alice";
+		String bankName="Societe Generale";
+		String cardType="Visa";
+		
+		cardPreferences(PREFS_CARD1,card1,cardNumber,date,lastName,firstName,bankName,cardType);
+		
+		card2 = new ArrayList<String>();	
 		//cardInfo("card1",card1);
-		cardPreferences(PREFS_CARD1,card1);
+		
+		cardNumber="0987654321098765";
+		date="0116";
+		lastName="DUPONT";
+		firstName="Alice";
+		bankName="Le Credit Lyonnais";
+		cardType="Mastercard";
 		
 		//cardInfo("card2",card2);
-		cardPreferences(PREFS_CARD2,card2);
+		cardPreferences(PREFS_CARD2,card2,cardNumber,date,lastName,firstName,bankName,cardType);
 		
 		createButton(1,PREFS_CARD1,card1);
-		createButton(2,PREFS_CARD1,card2);
+		createButton(2,PREFS_CARD2,card2);
 		
 
 		
@@ -93,17 +108,14 @@ public class CardsActivity extends Activity {
 			System.out.println(e.toString());
 		}
 	}
+	
 
-	public void cardPreferences(String prefs_card, ArrayList<String> card){	
+	public void cardPreferences(String prefs_card, ArrayList<String> card, String cardNumber,
+			String date,String lastName, String firstName,String bankName,String cardType){	
 		SharedPreferences settings = getSharedPreferences(prefs_card, 0);
 		SharedPreferences.Editor editor = settings.edit();	
 		
-		String cardNumber="9999999999999999";
-		String date="0114";
-		String lastName="DUPONT";
-		String firstName="Alice";
-		String bankName="Societe Generale";
-		String cardType="Visa";
+		
 		
 		card.add(cardNumber);
 		card.add(date);

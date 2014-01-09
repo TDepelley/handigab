@@ -8,13 +8,13 @@ import android.app.Activity;
 import android.content.Intent;
 
 public class MainActivity extends Activity {
-	private static int TIMEOUT= 500;
+	private static int TIMEOUT= 1100;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		
 		new Handler().postDelayed(new Runnable() {
 			public void run() {
 				Intent i = new Intent(MainActivity.this, CardsActivity.class);

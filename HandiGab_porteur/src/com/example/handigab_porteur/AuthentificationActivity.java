@@ -91,20 +91,7 @@ public class AuthentificationActivity extends Activity {
 	}
 
 	public void stop(View v) {
-		String flag = settings.getString("flag", "");
-
-		if (flag.equals("0")) {
-			Intent intent = new Intent(this, ServiceActivity.class);
-			intent.putExtra("pref", pref_name);
-			startActivity(intent);
-			finish();
-		} else if (flag.equals("1")){
-			Intent intent = new Intent(this, WithdrawalActivity.class);
-			intent.putExtra("pref", pref_name);
-			startActivity(intent);
-			finish();
-		}
-
+		finish();
 	}
 
 	public void launchWait(View v){

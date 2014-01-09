@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.view.Gravity;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -47,9 +48,9 @@ public class InformationActivity extends Activity {
 		TextView firstNameTV = (TextView)this.findViewById(R.id.firstName);
 		
 		
-		cardNumberTV.setText("Carte : "+cardNumber);
+		cardNumberTV.setText("\n\n\n\nCarte : "+cardNumber);
 		dateTV.setText("Date de validité : "+date);
-		lastNameTV.setText("Nom :" +lastName);
+		lastNameTV.setText("Nom : " +lastName);
 		firstNameTV.setText("Prénom : "+firstName);
 	}
 	
@@ -58,6 +59,7 @@ public class InformationActivity extends Activity {
 		LinearLayout l = (LinearLayout)this.findViewById(R.id.title);
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT);
+		l.setOrientation(LinearLayout.HORIZONTAL);
 		
 		String cardType = settings.getString("cardType", "");	
 		if(!cardType.isEmpty()) {

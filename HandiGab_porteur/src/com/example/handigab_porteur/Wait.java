@@ -85,6 +85,12 @@ public class Wait extends Activity {
 			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
 			
 			//TODO: Start here send message
+			sendMsg();
+			//Waiting for a response from the server
+			String response = null;
+			receiveMsg(response);// A faire et voir le code bluetooth
+			
+			
 			// Otherwise, setup the chat session
 		} 
 		else {
@@ -98,6 +104,12 @@ public class Wait extends Activity {
 	}
 	
 	
+	private void receiveMsg(String msg) {
+		// TODO Auto-generated method stub
+		HandiGabPorteurApplication app = (HandiGabPorteurApplication) getApplication();
+		app.receiveMessage(msg);
+	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();

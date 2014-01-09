@@ -247,7 +247,7 @@ public class HandiGabPorteurApplication extends Application {
 	 * Message reçu
 	 * @param message
 	 */
-	private void receiveMessage(String message) {
+	public void receiveMessage(String message) {
 		Toast.makeText(getApplicationContext(),
 				"Message reçu : "+message,
 				Toast.LENGTH_SHORT).show();

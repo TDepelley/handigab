@@ -15,5 +15,8 @@
     <string name="logo_ucbn">Logo UCBN</string>
     <string name="logo_diebold">Logo Diebold</string>
     <string name="logo_phone">Telephone en communication</string>
+    <string name="test">AAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaa</string>
+    <string name="bienvenue">Bienvenue !</string>
+    <string name="welcome">Welcome !</string>
 
 </resources>

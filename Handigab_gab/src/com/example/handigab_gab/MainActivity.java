@@ -1,5 +1,8 @@
 package com.example.handigab_gab;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.handigab_gab.bluetooth.BluetoothConstants;
@@ -38,13 +42,13 @@ public class MainActivity extends Activity {
 		if (D)
 			Log.e(TAG, "+++ ON CREATE +++");
 
+		// Set up the window layout
+		setContentView(R.layout.activity_main);
+		
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		getActionBar().hide();
-		
-		// Set up the window layout
-		setContentView(R.layout.activity_main);
 
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -56,29 +60,29 @@ public class MainActivity extends Activity {
 			finish();
 			return;
 		}
-
-		Button bouton = (Button) findViewById(R.id.withdrawalButton);
-		bouton.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this,
-						RunningOperation.class);
-				startActivity(intent);
-			}
-		});
-
-		Button bouton2 = (Button) findViewById(R.id.accountViewButton);
-		bouton2.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this,
-						RunningOperation.class);
-				startActivity(intent);
-
-			}
-		});
+//
+//		Button bouton = (Button) findViewById(R.id.withdrawalButton);
+//		bouton.setOnClickListener(new OnClickListener() {
+//
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				Intent intent = new Intent(MainActivity.this,
+//						RunningOperation.class);
+//				startActivity(intent);
+//			}
+//		});
+//
+//		Button bouton2 = (Button) findViewById(R.id.accountViewButton);
+//		bouton2.setOnClickListener(new OnClickListener() {
+//
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				Intent intent = new Intent(MainActivity.this,
+//						RunningOperation.class);
+//				startActivity(intent);
+//
+//			}
+//		});
 
 		
 	}
@@ -114,7 +118,12 @@ public class MainActivity extends Activity {
 		View decorView = getWindow().getDecorView();
 		decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
 		setContentView(R.layout.activity_main);
+		
+		String date = new SimpleDateFormat("dd-MM-yyyy hh:mm").format(new Date());
+		TextView dateView = (TextView) findViewById( R.id.dateTextView);
 
+		dateView.setText(date);
+		
 		// Performing this check in onResume() covers the case in which BT was
 		// not enabled during onStart(), so we were paused to enable it...
 		// onResume() will be called when ACTION_REQUEST_ENABLE activity
